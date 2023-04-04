@@ -1,0 +1,810 @@
+* {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800;700;600&display=swap');
+
+
+
+textarea:focus,
+input:focus {
+    outline: 0;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #332C2F;
+}
+
+
+textarea,
+input,
+button,
+label,
+p,
+a,
+h1,
+h2,
+h4,
+h3,
+span,
+select,
+::placeholder {
+    color: #ffffff;
+    font-family: 'Ruda', sans-serif;
+    font-size: 1.2vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+header {
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/back/11618866939_25-phonoteka_org-p-cherno-krasnii-fon-dlya-rabochego-stola-26.jpg);*/
+    background-image: linear-gradient(180deg, rgba(12, 19, 26, 0.38) 0%, rgba(24, 26, 28, 0.5) 88.5%, rgba(25, 27, 28) 100%), url(../img/Rectangle\ 116.png);
+    background-size: cover;
+    background-size: 100% 100%;
+    height: 170vh;
+}
+
+
+.tour,
+.place,
+.cab {
+    width: 17%;
+    font-size: 1.3vw;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 4vw 2vw 0 2vw;
+}
+
+
+.place:hover,
+.tour:hover,
+.cab:hover,
+.place:focus,
+.tour:focus,
+.cab:focus {
+    background-color: #0700002a;
+    padding: 0.5vw 0vw;
+}
+
+
+.nav1 {
+    width: 30%;
+    font-size: 1.8vw;
+    letter-spacing: 0.1em;
+    list-style: none;
+    display: flex;
+    margin-top: 3.7vw;
+    justify-content: center;
+    position: absolute;
+}
+
+.nav2 {
+    width: 42%;
+    font-size: 1.3vw;
+    list-style: none;
+    display: flex;
+    margin-left: 58vw;
+    margin-top: 4vw;
+    justify-content: center;
+    position: absolute;
+
+}
+
+
+
+.hedhed {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 13vw;
+}
+
+.headtext {
+    width: 80%;
+}
+
+
+
+header h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 150px;
+
+    margin-left: 5vw;
+    letter-spacing: 0.1em;
+}
+
+header h3 {
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+
+    margin-left: 5vw;
+}
+
+.c0text {
+    font-size: 2.1vw;
+    margin-top: 65vh;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.1em;
+    width: 100%;
+    vertical-align: middle;
+
+
+}
+
+.c0text h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin: 3vw 0;
+    line-height: 58px;
+}
+
+.c0text p {
+    padding: 0 22vw;
+    font-weight: 400;
+    line-height: 4vh;
+    font-size: 1vw;
+}
+
+
+
+
+.container1 {
+    background-image: linear-gradient(180deg, #362D2F 46.64%, #362D2F 99.95%), url(../img/Rectangle\ 127.png);
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    background-blend-mode: hard-light;
+    background-size: cover;
+    background-size: 100% 100%;
+}
+
+.c1text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-left: 17vw;
+
+}
+
+.c1text h2 {
+    width: 55%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.4vw;
+    letter-spacing: 0.1em;
+    margin: 4vw 0;
+}
+
+
+.c1icons {
+    display: flex;
+    justify-content: center;
+    margin: 2vw 0vw;
+}
+
+.c1ic {
+    margin: 2vw 2vw;
+    width: 15%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.c1ic img {
+    margin: 0vw 2vw;
+    height: 4vw;
+}
+
+.c1ic p {
+    width: 50%;
+    text-align: center;
+    margin: 1vw 0;
+    font-size: 1vw;
+}
+
+.c1ic input {
+    background-color: #000000ad;
+    border: #FFFFFF solid 0.1vw;
+    font-size: 1vw;
+    padding: 0.5vw;
+    margin: 1vw 0;
+}
+
+.c1tours {
+    display: flex;
+    justify-content: center;
+}
+
+.c1img {
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.7) 0%, rgba(217, 217, 217, 0) 76.34%);
+    height: 20vw;
+    display: block;
+    position: relative;
+    width: 100%;
+    content: '';
+    margin-top: -20vw;
+}
+
+.c1tour img {
+    height: 20vw;
+    width: 48vw;
+    object-fit: cover;
+}
+
+.c1tourtext {
+    position: absolute;
+    margin: -7.5vw 0 0 2vw;
+}
+
+.c1tourtext h4 {
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    font-size: 1.5vw;
+}
+
+.c1tourp {
+    display: flex;
+    margin-top: 1.6vw;
+
+}
+
+.c1tourp p {
+    margin-right: 3vw;
+    font-size: 1vw;
+}
+
+
+
+.container5 {
+    background: linear-gradient(179.95deg, #1A1C1D 46.64%, #3D3B42 99.95%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10vw;
+}
+
+.border {
+    height: 70vh;
+}
+
+.c5gallery {
+    position: absolute;
+    width: 80%;
+}
+
+.gall {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 4.5vw;
+}
+
+.gall img {
+    width: 22vw;
+    height: 12vw;
+    object-fit: cover;
+    margin: 0.5vw;
+}
+
+
+.lev {
+    border-radius: 5vw;
+    border: solid 0.1vw #000000;
+    height: 3.5vw;
+    width: 3.5vw;
+    padding-top: 0.3vw;
+    padding-right: 0.3vw;
+    position: absolute;
+    margin-top: -15vw;
+    margin-left: 1vw;
+
+}
+
+.prav img {
+    height: 1.5vw;
+}
+
+.prav {
+    border-radius: 5vw;
+    border: solid 0.1vw #000000;
+    height: 3.5vw;
+    width: 3.5vw;
+    padding-top: 0.3vw;
+    padding-right: 0.3vw;
+    position: absolute;
+    margin-top: -15vw;
+    margin-left: 74.5vw;
+    transform: rotate(180deg);
+
+}
+
+.lev img {
+    height: 1.5vw;
+}
+
+.container3 {
+    padding-top: 17vh;
+    padding-bottom: 3vh;
+    background: linear-gradient(180deg, #191518 0%, #C2AFB3 100%);
+    background-position: center;
+}
+
+
+
+
+footer {
+    background-image: url(../img/image\ 11.png);
+    background-size: 100% 100%;
+    height: 63vh;
+    padding: 2vw 0 0 0;
+    position: relative;
+}
+
+.svetl {
+
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+}
+
+footer button {
+    box-sizing: border-box;
+    width: 15vw;
+    height: 3.4vw;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    font-weight: 400;
+    font-size: 1.3vw;
+    margin: 6vw 5vw 0 0vw;
+    cursor: pointer;
+}
+
+footer h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.4vw;
+    letter-spacing: 0.1em;
+    color: #000000;
+    margin-top: 2vw;
+}
+
+.temn {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    margin-top: 3.5vw;
+    height: 12vw;
+    position: absolute;
+    bottom: 0;
+}
+
+.logo {
+    margin-left: 10vw;
+    margin-top: 2vw;
+}
+
+
+.icons {
+    width: 20vw;
+    margin-left: 39vw;
+    margin-top: 6vw;
+}
+
+.icons img {
+    height: 2.5vw;
+    margin-left: 2.5vw;
+}
+
+footer p {
+    margin-left: 2vw;
+    font-size: 1vw;
+    margin-top: 6vw;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 450px) {
+
+    textarea,
+    input,
+    button,
+    label,
+    p,
+    a,
+    h1,
+    h2,
+    h4,
+    h3,
+    h5,
+    span,
+    select,
+    ::placeholder {
+        color: #ffffff;
+        font-family: 'Ruda', sans-serif;
+        font-size: 4vw;
+    }
+
+    header {
+        /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/back/11618866939_25-phonoteka_org-p-cherno-krasnii-fon-dlya-rabochego-stola-26.jpg);*/
+        background-image: url(../img/phone/Rectangle\ 116\ \(1\).png);
+        background-size: cover;
+        background-size: 100% 100%;
+        height: 90vh;
+    }
+
+
+    .tour,
+    .place,
+    .cab {
+        width: 57%;
+        font-size: 3.5vw;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        margin: 4vw 2vw 0 2vw;
+    }
+
+
+    .place:hover,
+    .tour:hover,
+    .cab:hover,
+    .place:focus,
+    .tour:focus,
+    .cab:focus {
+        background-color: #0700002a;
+        padding: 0.5vw 0vw;
+    }
+
+
+    .nav1 {
+        width: 40%;
+        letter-spacing: 0.1em;
+        list-style: none;
+        display: flex;
+        margin-top: 7.7vw;
+        justify-content: center;
+        position: absolute;
+    }
+
+    .nav2 {
+        width: 62%;
+        list-style: none;
+        display: flex;
+        margin-left: 40vw;
+        margin-top: 8vw;
+        justify-content: center;
+        position: absolute;
+
+    }
+
+
+
+    .hedhed {
+
+        display: flex;
+        justify-content: center;
+        padding-top: 7vh;
+    }
+
+    header h2 {
+
+        margin-top: 5vh;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+        vertical-align: middle;
+        font-size: 32px;
+        margin-left: 5vw;
+        line-height: 80px;
+    }
+
+    header h3 {
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        margin-left: 5vw;
+    }
+    
+    .c0text {
+        margin-top: 30vh;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.1em;
+        width: 100%;
+        vertical-align: middle;
+    
+    
+    }
+    
+    .c0text h2 {
+        font-weight: 600;
+        font-size: 16px;
+        margin: 3vw 0;
+        line-height: 58px;
+    }
+    
+    .c0text p {
+        padding: 0 10vw;
+        font-weight: 400;
+        line-height: 1.7vh;
+        font-size: 12px;
+    }
+    
+
+
+
+
+
+
+    .container1 {
+        background: linear-gradient(180deg, #332C2E 0%, #3E3537 55.21%, #7B6E71 72.4%, #9F8F93 86.46%, #C1AFB2 100%);
+        display: flex;
+        padding: 8vw;
+        flex-direction: column;
+    }
+
+    .c1text {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-left: 9vw;
+
+    }
+
+    .c1text h2 {
+        width: 90%;
+        text-align: center;
+        font-weight: 800;
+        font-size: 16px;
+        letter-spacing: 0.1em;
+    }
+
+    .c1text p {
+        margin: 2vw;
+        font-size: 10px;
+    }
+
+    .c1icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 2vw 0vw;
+    }
+
+    .c1ic {
+        margin: 2vw 2vw;
+        width: 80%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .c1ic img {
+        margin: 0vw 5vw 0 0;
+        height: 4vh;
+    }
+
+    .c1ic p {
+        display: none;
+    }
+
+    .c1ic input {
+        background-color: #000000ad;
+        border: #FFFFFF solid 0.1vw;
+        width: 45%;
+        font-size: 1vh;
+        padding: 0.5vw;
+        margin: 1vw 0;
+    }
+
+    .c1tours {
+        display: flex;
+        justify-content: center;
+        margin-top: 5vw;
+    }
+
+    .c1img {
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(217, 217, 217, 0) 76.34%);
+        height: 100vw;
+        display: block;
+        position: relative;
+        width: 100%;
+        content: '';
+        margin-top: -100vw;
+        object-fit: cover;
+    }
+
+    .c1tour img {
+        height: 100vw;
+        width: 80vw;
+    }
+
+    .c1tourtext {
+        position: absolute;
+        margin: -17.5vh 0 0 6vw;
+        width: 70%;
+    }
+
+    .c1tourtext h4 {
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        font-size: 16px;
+    }
+
+    .c1tourp {
+        display: flex;
+        margin-top: 4.6vh;
+
+    }
+
+    .c1tourp p {
+        margin-right: 3vw;
+        font-size: 12px;
+    }
+
+
+
+
+
+  
+
+
+
+
+    .container3 {
+        display: none;
+    }
+
+
+
+
+
+   
+
+    .container5 {
+        background: linear-gradient(180deg, #2B2B2B 14.25%, #352D2F 100%);
+
+        padding: 15vw 00vw;
+    }
+
+    .border {
+        height: 37vh;
+    }
+
+    .c5gallery {
+        position: absolute;
+        width: 80%;
+    }
+
+    .gall {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    .gall img {
+        width: 22vw;
+        height: 22vw;
+        object-fit: cover;
+        margin: 1.5vw;
+    }
+
+
+    .lev {
+        display: none;
+
+    }
+
+
+    .prav {
+        display: none;
+
+    }
+
+
+    footer {
+        background-image: url(../img/phone/image\ 11.png);
+
+        height: 63vh;
+        padding: 5vw 0 0 0;
+        position: relative;
+    }
+
+    .svetl {
+
+        margin-top: 2vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    footer button {
+        box-sizing: border-box;
+        width: 30vw;
+        height: 4vh;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+        font-weight: 400;
+        font-size: 1.3vh;
+        margin: 6vw 15vw 0 15vw;
+        cursor: pointer;
+    }
+
+    footer h2 {
+        text-align: center;
+        font-weight: 800;
+        font-size: 2.4vh;
+        letter-spacing: 0.1em;
+        color: #000000;
+        margin-top: 4vh;
+    }
+
+    .temn {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        margin-top: 3.5vw;
+        height: 30vh;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .logo {
+        margin-left: 10vw;
+        margin-top: 2vw;
+    }
+
+
+    .icons {
+        width: 60vw;
+        margin-left: 10vw;
+        margin-top: 15vw;
+    }
+
+    .icons img {
+        height: 5vh;
+        margin-left: 2.5vw;
+    }
+
+    footer p {
+        margin-left: 25vw;
+        font-size: 5vw;
+        margin-top: 40vw;
+        position: absolute;
+        width: 80%;
+    }
+
+
+
+
+
+
+}
