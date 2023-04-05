@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href=" {{ URL::asset('css/reset.css'); }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('css/style.css'); }} ">
+    <link rel="stylesheet" href=" {{ URL::asset('css/reset.css') }} ">
+    <link rel="stylesheet" href=" {{ URL::asset('css/style.css') }} ">
 
     <title>WILDLIFE</title>
 
@@ -21,14 +21,13 @@
 <body style="overflow-x: hidden;">
 
     <header>
-
         <nav>
             <div class="nav1">
-                <li><a class="main" href="index.html">WILDLIFE</a></li>
+                <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
             </div>
             <div class="nav2">
-                <li><a class="tour" href="tour.html">Туры</a></li>
-                <li> <a class="place" href="place.html">Места</a></li>
+                <li><a class="tour" href="<?= url('/tour') ?>">Туры</a></li>
+                <li> <a class="place" href="<?= url('/place') ?>">Места</a></li>
                 <li> <a class="cab" href="#">О нас</a></li>
             </div>
         </nav>
@@ -39,7 +38,6 @@
                 <button>Отправиться</button>
             </div>
         </div>
-
     </header>
     <div class="container1">
 
@@ -184,16 +182,23 @@
             <a href="index.html"><img class="logo" src="img/icons/icons8-нравится-100 1.png" alt=""></a>
             <p>Все права защищены</p>
 
-            <div class="icons"><a href="#"><img src="img/icons/icons8-vk-96 1.png" alt=""></a> <a href="#"><img
-                        src="img/icons/icons8-новый-пост-96 1.png" alt=""></a><a href="#"><img
-                        src="img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
+            <div class="icons"><a href="#"><img src="img/icons/icons8-vk-96 1.png" alt=""></a> <a
+                    href="#"><img src="img/icons/icons8-новый-пост-96 1.png" alt=""></a><a
+                    href="#"><img src="img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
             </div>
         </div>
 
 
 
     </footer>
-
+    <script>
+        start();
+        async function start() {
+            let promise = await fetch("http://wildlife/api/place")
+            let json = await promise.json();
+            console.log(json)
+        }
+    </script>
 </body>
 
 </html>

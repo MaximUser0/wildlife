@@ -24,11 +24,11 @@
 
         <nav>
             <div class="nav1">
-                <li><a class="main" href="index.html">WILDLIFE</a></li>
+                <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
             </div>
             <div class="nav2">
-                <li><a class="tour" href="view('tour')">Туры</a></li>
-                <li> <a class="place" href="view('place')">Места</a></li>
+                <li><a class="tour" href="<?= url('/tour') ?>">Туры</a></li>
+                <li> <a class="place" href="<?= url('/place') ?>">Места</a></li>
                 <li> <a class="cab" href="#">О нас</a></li>
             </div>
         </nav>
@@ -38,8 +38,8 @@
                 <h3>Подъем на самую выоскую гору в России? Легко!</h3>
                 <p>5 ★★★★★</p>
             </div>
-        </div> 
-      
+        </div>
+
         <div class="c1icons">
             <div class="c1ic">
                 <img src="img/icons/icons8-пользователь-100 1.svg" alt="">
@@ -61,17 +61,17 @@
         <div class="c0sec"><div class="c0text">
             <h2>Описание</h2>
             <p>
-                Двуглавая гора Эльбрус, расположенная на самой границе республик Кабардино-Балкария и Карачаево-Черкесия, 
+                Двуглавая гора Эльбрус, расположенная на самой границе республик Кабардино-Балкария и Карачаево-Черкесия,
                 чуть севернее Главного Кавказского хребта, —
-                самая высокая точка России — по праву 
-                считается одним из семи чудес 
+                самая высокая точка России — по праву
+                считается одним из семи чудес
                 нашей страны.
             </p>
-            
+
         </div><img src="img/Polygon 7.png" alt=""></div>
-        
+
     </header>
-   
+
     <div class="container5">
         <img class="border" src="img/Rectangle 77 (1).png" alt="">
         <div class="c5gallery">
@@ -117,7 +117,7 @@
                     <p>Экскурсии по всем красотам окрестностей Эльбруса.</p>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -128,9 +128,9 @@
 
         <div class="c1text">
             <h2>Отзывы</h2>
-           
+
         </div>
-       
+
         <div class="c1tours">
 
             <div class="c1tour">
@@ -140,7 +140,7 @@
                         <h5>Татьяна, 31.02.2050</h5>
                         <p>Незабываемое приключение! Столько эмоций. Свежий воздух, захватывающие виды и прекрасный Кавказ.</p>
                     </div>
-                    
+
                 </div>
                 <div class="c1photos">
                     <img src="img/image 11.png" alt="">

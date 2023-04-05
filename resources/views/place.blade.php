@@ -24,11 +24,11 @@
 
         <nav>
             <div class="nav1">
-                <li><a class="main" href="index.html">WILDLIFE</a></li>
+                <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
             </div>
             <div class="nav2">
-                <li><a class="tour" href="tour.html">Туры</a></li>
-                <li> <a class="place" href="place.html">Места</a></li>
+                <li><a class="tour" href="<?= url('/tour') ?>">Туры</a></li>
+                <li> <a class="place" href="<?= url('/place') ?>">Места</a></li>
                 <li> <a class="cab" href="#">О нас</a></li>
             </div>
         </nav>
@@ -45,7 +45,7 @@
             </p>
         </div>
     </header>
-   
+
     <div class="container5">
         <img class="border" src="img/icons/Rectangle 77.png" alt="">
         <div class="c5gallery">
@@ -68,9 +68,9 @@
 
         <div class="c1text">
             <h2>Доступные туры</h2>
-           
+
         </div>
-       
+
         <div class="c1tours">
 
             <div class="c1tour">
@@ -91,7 +91,7 @@
 
     </div>
     <div class="container3">
-        
+
     </div>
 
     <footer>
