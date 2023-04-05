@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Place;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 
-class PlaceController extends Controller
+class TourController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        echo json_encode(Place::all());
+        echo json_encode(Tour::all());
     }
 
     /**
@@ -25,11 +25,13 @@ class PlaceController extends Controller
      */
     public function store(Request $request)
     {
-        Place::create([
+        Tour::create([
+            "id_place" => $request['id_place'],
             "title" => $request['title'],
             "short_description" => $request['short_description'],
-            "title_description" => $request['title_description'],
             "description" => $request['description'],
+            "people_count" => $request['people_count'],
+            "priсe" => $request['priсe'],
             "main_img" => $request['main_img']
         ]);
         echo response("Successfully created", 200);
@@ -43,7 +45,7 @@ class PlaceController extends Controller
      */
     public function show($id)
     {
-        echo json_encode(Place::findOrFail($id));
+        echo json_encode(Tour::findOrFail($id));
     }
 
     /**
@@ -55,11 +57,13 @@ class PlaceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Place::updateOrCreate(["id" => $id],[
+        Tour::updateOrCreate(["id" => $id],[
+            "id_place" => $request['id_place'],
             "title" => $request['title'],
             "short_description" => $request['short_description'],
-            "title_description" => $request['title_description'],
             "description" => $request['description'],
+            "people_count" => $request['people_count'],
+            "priсe" => $request['priсe'],
             "main_img" => $request['main_img']
         ]);
         echo response("Successfully updated", 200);
@@ -73,7 +77,7 @@ class PlaceController extends Controller
      */
     public function destroy($id)
     {
-        Place::findOrFail($id)->delete();
+        Tour::findOrFail($id)->delete();
         echo response("", 204);
     }
 }

@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href=" {{ URL::asset('css/reset.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('css/style.css') }} ">
+    <link rel="stylesheet" href=" {{ url('css/reset.css') }} ">
+    <link rel="stylesheet" href=" {{ url('css/style.css') }} ">
 
     <title>WILDLIFE</title>
 
