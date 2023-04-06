@@ -17,11 +17,15 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('id_place')->unsigned();
             $table->string('title');
-            $table->string('short_description');
-            $table->string('description');
+            $table->text('short_description');
+            $table->text('description');
             $table->integer('people_count');
+            $table->integer('date');
             $table->integer('priсe');
-            $table->string('main_img');
+            $table->text('main_img');
+            $table->text('description_img');
+            $table->string('complexity');
+            $table->text('features');
             $table->timestamps();
 
             $table->foreign('id_place')

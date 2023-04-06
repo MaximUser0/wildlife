@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tour;
+use App\Models\ImgPlace;
 use Illuminate\Http\Request;
 
-class TourController extends Controller
+class ImgPlaceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TourController extends Controller
      */
     public function index()
     {
-        echo json_encode(Tour::all());
+        echo json_encode(ImgPlace::all());
     }
 
     /**
@@ -25,17 +25,9 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        Tour::create([
+        ImgPlace::create([
+            "url" => $request['url'],
             "id_place" => $request['id_place'],
-            "title" => $request['title'],
-            "short_description" => $request['short_description'],
-            "description" => $request['description'],
-            "people_count" => $request['people_count'],
-            "priсe" => $request['priсe'],
-            "main_img" => $request['main_img'],
-            "description_img" => $request['description_img'],
-            "complexity" => $request['complexity'],
-            "features" => $request['features'],
         ]);
         echo response("Successfully created", 200);
     }
@@ -48,7 +40,7 @@ class TourController extends Controller
      */
     public function show($id)
     {
-        echo json_encode(Tour::findOrFail($id));
+        echo json_encode(ImgPlace::findOrFail($id));
     }
 
     /**
@@ -60,17 +52,9 @@ class TourController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Tour::updateOrCreate(["id" => $id], [
+        ImgPlace::updateOrCreate(["id" => $id], [
             "id_place" => $request['id_place'],
-            "title" => $request['title'],
-            "short_description" => $request['short_description'],
-            "description" => $request['description'],
-            "people_count" => $request['people_count'],
-            "priсe" => $request['priсe'],
-            "main_img" => $request['main_img'],
-            "description_img" => $request['description_img'],
-            "complexity" => $request['complexity'],
-            "features" => $request['features'],
+            "url" => $request['url'],
         ]);
         echo response("Successfully updated", 200);
     }
@@ -83,7 +67,7 @@ class TourController extends Controller
      */
     public function destroy($id)
     {
-        Tour::findOrFail($id)->delete();
+        ImgPlace::findOrFail($id)->delete();
         echo response("", 204);
     }
 }

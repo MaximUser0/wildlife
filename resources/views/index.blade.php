@@ -26,23 +26,23 @@
                 <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
             </div>
             <div class="nav2">
-                <li><a class="tour" href="<?= url('/tour') ?>">Туры</a></li>
-                <li> <a class="place" href="<?= url('/place') ?>">Места</a></li>
-                <li> <a class="cab" href="#">О нас</a></li>
+                <li><a class="tour" href="#anchor_tour">Туры</a></li>
+                <li><a class="place" href="#portfolioid">Места</a></li>
+                <li><a class="cab" href="#anchor_about">О нас</a></li>
             </div>
         </nav>
         <div class="hedhed">
             <div class="headtext">
                 <h1>WILDLIFE</h1>
                 <h2>Путешествуй – почувствуй ветер гор</h2>
-                <button>Отправиться</button>
+                <a href="#anchor_tour"><button>Отправиться</button></a>
             </div>
         </div>
     </header>
     <div class="container1">
 
         <div class="c1text">
-            <h2>Доступные туры</h2>
+            <h2 id="anchor_tour">Доступные туры</h2>
             <p>
                 Подберите для себя подходящий тур<br>
                 и отправьтесь в захватывающие приключение
@@ -71,8 +71,7 @@
             </div>
         </div>
         <div class="c1tours">
-
-            <div class="c1tour">
+            <a class="c1tour" href=" <?= url('/tour') ?> ">
                 <img src="img/Rectangle 95.png" alt="">
                 <div class="c1img"></div>
                 <div class="c1tourtext">
@@ -82,9 +81,8 @@
                         <p>10 дней</p>
                         <p>23 000 рублей</p>
                     </div>
-
                 </div>
-            </div>
+            </a>
         </div>
 
 
@@ -94,13 +92,13 @@
     <div class="container2" id="portfolioid">
         <h2>Места</h2>
         <div class="places">
-            <div class="place1">
+            <a class="place1" href="<?= url('/place') ?>">
                 <img src="img/Rectangle 16.png" alt="">
                 <div class="c2t1">
                     <h3>Кавказ</h3>
                     <p>Красивый горы красивый вид. Прям вах загляденье. купи пахлаву не пожалеешь</p>
                 </div>
-            </div>
+            </a>
             <div class="place2">
 
                 <div class="c2t2">
@@ -115,7 +113,7 @@
     </div>
 
 
-    <div class="container3">
+    <div class="container3" id="anchor_about">
         <h2>Почему именно мы?</h2>
     </div>
 
@@ -187,18 +185,9 @@
                     href="#"><img src="img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
             </div>
         </div>
-
-
-
+        <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
+        <script src=" {{ url('js/main.js') }} "></script>
     </footer>
-    <script>
-        start();
-        async function start() {
-            let promise = await fetch("http://wildlife/api/place")
-            let json = await promise.json();
-            console.log(json)
-        }
-    </script>
 </body>
 
 </html>

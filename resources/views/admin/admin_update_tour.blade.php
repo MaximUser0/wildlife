@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/adminredmast.css">
+    <link rel="stylesheet" href=" {{ url('css/reset.css') }} ">
+    <link rel="stylesheet" href=" {{ url('css/adminredmast.css') }} ">
     <title>Master</title>
 
 </head>
@@ -20,12 +20,11 @@
         <nav>
             <div class="nav1">
 
-                <li><a class="main" href="adminpols.html">Пользователи</a></li>
-                <li><a class="master" href="adminmesto.html">Места</a></li>
-                <li><a class="master" href="admintour.html">Туры</a></li>
+                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
+                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
             </div>
-            <div class="theader"><a href="index.html"><img class="logotip"
-                        src="img/icons/wEfh3IkjzEU_(1)-transformed.png" alt="картинку съел таракан"></a>
+            <div class="theader"><a href="<?= url('/') ?>"><img class="logotip"
+            src=" {{ url('img/loge.svg') }} " alt="Логотип"></a>
 
             </div>
             <div class="nav2">
@@ -40,8 +39,16 @@
         <div class="obsh">
             <h3>Название</h3>
             <input type="text" name="name">
-            <h3>Заголовок</h3>
+            <h3>Место</h3>
             <input type="text" name="place">
+            <h3>Дата</h3>
+            <input type="date" name="date">
+            <h3>Количество человек</h3>
+            <input type="text" name="count">
+            <h3>Стоимость</h3>
+            <input type="text" name="cost">
+            <h3>Длительность</h3>
+            <input type="text" name="long">
             <h3>Краткая информация</h3>
             <textarea name="kratinfo"></textarea>
             <h3>Общая информация</h3>
@@ -57,7 +64,18 @@
             </label>
 
             <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
+            <h3> Второстепенное фото</h3>
+            <label class="input-file">
+                <input type="file" name="file">
+                <span>Выберите файл</span>
+            </label> 
+            <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
 
+            <h3>Особенности</h3>
+            <input type="text" name="first">
+            <input type="text" name="second">
+            <input type="text" name="third">
+            <input type="text" name="fourth">
         </div>
         <div class="portfolioadm">
             <div class="butts">

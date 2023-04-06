@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/adminredmast.css">
+    <link rel="stylesheet" href=" {{ url('css/reset.css') }} ">
+    <link rel="stylesheet" href=" {{ url('css/adminredmast.css') }} ">
     <title>Master</title>
 
 </head>
@@ -20,12 +20,11 @@
         <nav>
             <div class="nav1">
 
-                <li><a class="main" href="adminpols.html">Пользователи</a></li>
-                <li><a class="master" href="adminmesto.html">Места</a></li>
-                <li><a class="master" href="admintour.html">Туры</a></li>
+                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
+                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
             </div>
-            <div class="theader"><a href="index.html"><img class="logotip"
-                        src="img/icons/wEfh3IkjzEU_(1)-transformed.png" alt="картинку съел таракан"></a>
+            <div class="theader"><a href="<?= url('/') ?>"><img class="logotip"
+                        src=" {{ url('img/loge.svg') }} " alt="Логотип"></a>
 
             </div>
             <div class="nav2">

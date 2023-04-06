@@ -16,6 +16,9 @@ class Tour extends Model
         "description",
         "people_count",
         "priсe",
-        "main_img"
+        "main_img",
+        "description_img",
+        "complexity",
+        "features",
     ];
 }

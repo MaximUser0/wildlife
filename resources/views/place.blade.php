@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/place.css">
 
-    <title>WILDLIFE place</title>
+    <title>Кавказ</title>
 
 </head>
 
@@ -27,9 +27,9 @@
                 <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
             </div>
             <div class="nav2">
-                <li><a class="tour" href="<?= url('/tour') ?>">Туры</a></li>
-                <li> <a class="place" href="<?= url('/place') ?>">Места</a></li>
-                <li> <a class="cab" href="#">О нас</a></li>
+                <li><a class="tour" href="<?= url('/') ?>/#anchor_tour">Туры</a></li>
+                <li> <a class="place" href="<?= url('/') ?>/#portfolioid">Места</a></li>
+                <li> <a class="cab" href="<?= url('/') ?>/#anchor_about">О нас</a></li>
             </div>
         </nav>
         <div class="hedhed">

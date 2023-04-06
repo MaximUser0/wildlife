@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/adminredmast.css">
+    <link rel="stylesheet" href=" {{ url('css/reset.css') }} ">
+    <link rel="stylesheet" href=" {{ url('css/adminaddtour.css') }} ">
     <title>Master</title>
 
 </head>
@@ -20,12 +20,11 @@
         <nav>
             <div class="nav1">
 
-                <li><a class="main" href="adminpols.html">Пользователи</a></li>
-                <li><a class="master" href="adminmesto.html">Места</a></li>
-                <li><a class="master" href="admintour.html">Туры</a></li>
+                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
+                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
             </div>
-            <div class="theader"><a href="index.html"><img class="logotip"
-                        src="img/icons/wEfh3IkjzEU_(1)-transformed.png" alt="картинку съел таракан"></a>
+            <div class="theader"><a href="<?= url('/') ?>"><img class="logotip"
+            src=" {{ url('img/loge.svg') }} " alt="Логотип"></a>
 
             </div>
             <div class="nav2">
@@ -64,13 +63,13 @@
                 <span>Выберите файл</span>
             </label>
 
-            <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
+          
             <h3> Второстепенное фото</h3>
             <label class="input-file">
                 <input type="file" name="file">
                 <span>Выберите файл</span>
             </label> 
-            <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
+            
 
             <h3>Особенности</h3>
             <input type="text" name="first">
@@ -110,46 +109,7 @@
                     <span>Выберите файл</span>
                 </label>
             </div>
-            <div class="portfolio">
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                    </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                
-                <button type="submit">Редактировать</button>
-            </div>
+            
         
         </div>
 
