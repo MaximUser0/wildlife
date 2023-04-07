@@ -36,6 +36,7 @@ class TourController extends Controller
             "description_img" => $request['description_img'],
             "complexity" => $request['complexity'],
             "features" => $request['features'],
+            "date" => $request['date'],
         ]);
         echo response("Successfully created", 200);
     }

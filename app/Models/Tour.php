@@ -20,5 +20,6 @@ class Tour extends Model
         "description_img",
         "complexity",
         "features",
+        "date",
     ];
 }

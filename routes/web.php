@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Place;
+use App\Models\Tour;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $places = Place::get();
+    $tours = Tour::get();
+    return view('index', compact(["places", "tours"]));
 });
 Route::get('/place', function () {
     return view('place');
 });
-Route::get('/tour', function () {
-    return view('tour');
+Route::get('/tour/{tour}', function ($id) {
+    $array = Tour::find($id);
+    return view('tour', compact("array"));
 });
 Route::get('/admin', function () {
     return view('admin/admin');

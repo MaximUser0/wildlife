@@ -292,14 +292,19 @@ header h2 {
     margin-bottom: 5vw;
 }
 
-.place1 img {
-    margin-right: 13vw;
+.place1 div {
     height: 15.5vw;
+    width: 29vw; 
+}
+
+.place1 img {
+   height: 15.5vw;
    width: 29vw; 
    object-fit: cover;
 }
 
 .c2t1 {
+    margin-left: 13vw;
     text-align: right;
 }
 
@@ -321,6 +326,11 @@ header h2 {
     width: 70vw;
     margin-bottom: 5vw;
 }
+
+.place2 div {
+    height: 15.5vw;
+    width: 29vw; 
+ }
 
 .place2 img {
    height: 15.5vw;
@@ -547,7 +557,14 @@ footer p {
     font-size: 1vw;
     margin-top: 6vw;
 }
-
+.content-center{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hidden{
+    display: none;
+}
 
 
 

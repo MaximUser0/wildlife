@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800&display=swap"
         rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href=" {{ url('css/reset.css') }} ">
     <link rel="stylesheet" href=" {{ url('css/style.css') }} ">
 
@@ -18,10 +18,10 @@
 
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden;" data-bs-spy="scroll" data-bs-target="#nav-scroll-spy">
 
     <header>
-        <nav>
+        <nav id="nav-scroll-spy">
             <div class="nav1">
                 <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
             </div>
@@ -70,21 +70,23 @@
                 <input type="text">
             </div>
         </div>
+        @foreach ($tours as $tour)
         <div class="c1tours">
-            <a class="c1tour" href=" <?= url('/tour') ?> ">
-                <img src="img/Rectangle 95.png" alt="">
+            <a class="c1tour" href=" <?= url('/tour'."/".$tour['id']) ?> ">
+                <img src="<?= $tour["main_img"] ?>" alt="">
                 <div class="c1img"></div>
                 <div class="c1tourtext">
-                    <h4>Восхождение на Эльбрус</h4>
+                    <h4>Тур на <?= $tour["title"] ?></h4>
                     <div class="c1tourp">
-                        <p>31.02.2050</p>
-                        <p>10 дней</p>
-                        <p>23 000 рублей</p>
+                        <p><?= $tour["complexity"] ?> сложность</p>
+                        <p><?= $tour["date"] ?> дней</p>
+                        <p><?= $tour["priсe"] ?> рублей</p>
                     </div>
                 </div>
             </a>
         </div>
-
+        @endforeach
+        
 
     </div>
 
@@ -92,24 +94,44 @@
     <div class="container2" id="portfolioid">
         <h2>Места</h2>
         <div class="places">
+            <?php 
+            $count = -1;
+            $max = count($places) - 1;
+            ?>
+            @foreach ($places as $place)
+            <?php $count++; 
+            if($count == 2){
+                echo'<div class="hidden mb-2 content-center">';
+                $max+=10;
+            } 
+            ?>
+            @if ($count % 2 != 0)
             <a class="place1" href="<?= url('/place') ?>">
-                <img src="img/Rectangle 16.png" alt="">
+                <div><img src="<?=$place['main_img']?>" alt=""></div>
                 <div class="c2t1">
-                    <h3>Кавказ</h3>
-                    <p>Красивый горы красивый вид. Прям вах загляденье. купи пахлаву не пожалеешь</p>
+                    <h3><?=$place['title']?></h3>
+                    <p><?=explode("." , $place['description'])[0]."."?></p>
                 </div>
             </a>
-            <div class="place2">
-
+            @else
+            <a class="place2" href="<?= url('/place') ?>">
                 <div class="c2t2">
-                    <h3>Кавказ</h3>
-                    <p>Красивый горы красивый вид. Прям вах загляденье. купи пахлаву не пожалеешь</p>
+                    <h3><?=$place['title']?></h3>
+                    <p><?=explode("." , $place['description'])[0]."."?></p>
                 </div>
-                <img src="img/Rectangle 16.png" alt="">
-            </div>
+                <img src="<?=$place['main_img']?>" alt="">
+            </a>
+            @endif
+            <?php
+            if($count == $max){
+                echo'</div>';
+            } 
+            ?>
 
+            @endforeach
         </div>
-        <button class="buttonPlases"><img src="img/icons/Polygon 11.png" alt=""></button>
+        <div class="w-100"><button onclick="showBlock()" class="buttonPlases"><img src="img/icons/Polygon 11.png" alt=""></button> </div>
+        
     </div>
 
 
@@ -186,6 +208,7 @@
             </div>
         </div>
         <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
+        <script src=" {{ url('js/bootstrap.min.js') }} "></script>
         <script src=" {{ url('js/main.js') }} "></script>
     </footer>
 </body>
