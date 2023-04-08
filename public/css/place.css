@@ -162,7 +162,9 @@ header h3 {
 }
 
 
-
+*, ::after, ::before {
+    box-sizing: content-box;
+}
 
 .container1 {
     background-image: linear-gradient(180deg, #362D2F 46.64%, #362D2F 99.95%), url(../img/Rectangle\ 127.png);
@@ -282,6 +284,7 @@ header h3 {
 
 .border {
     height: 70vh;
+    border: none !important;
 }
 
 .c5gallery {
@@ -290,7 +293,6 @@ header h3 {
 }
 
 .gall {
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;

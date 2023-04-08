@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/place.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/place.css">
 
-    <title>Кавказ</title>
+    <title><?= $array['title'] ?></title>
 
 </head>
 
@@ -34,35 +35,41 @@
         </nav>
         <div class="hedhed">
             <div class="headtext">
-                <h2>Кавказ</h2>
-                <h3>ГОРНАЯ СИСТЕМА НА ЮГЕ РОССИИ</h3>
+                <h2><?= $array['title'] ?></h2>
+                <h3><?= $array['short_description'] ?></h3>
             </div>
         </div>
         <div class="c0text">
-            <h2>Манящий Кавказ</h2>
-            <p>
-                Здесь играют лучами яркого солнца ледяные цепи гор, а со склонов спускаются дремучие леса, уступая место поросшим цветами и разнотравьем лугам. Здесь озера и реки хранят вековые тайны, а древние храмы и усыпальницы берегут историю этих мест. Здесь, на южной окраине России, встречают гостеприимные жители. Отдых на Северном Кавказе в 2023 году понравится и тем, кому по душе размеренный ритм, и любителям приключений.
-            </p>
+            <h2><?= $array['title_description'] ?></h2>
+            <p><?= $array['description'] ?></p>
         </div>
     </header>
-
-    <div class="container5">
-        <img class="border" src="img/icons/Rectangle 77.png" alt="">
-        <div class="c5gallery">
-
-            <div class="gall">
-                <img src="img/Rectangle 78.png" alt="">
-                <img src="img/Rectangle 79.png" alt="">
-                <img src="img/Rectangle 80.png" alt="">
-                <img src="img/Rectangle 81.png" alt="">
-                <img src="img/Rectangle 82.png" alt="">
-                <img src="img/Rectangle 83.png" alt="">
-            </div>
-            <button class="lev"><img src="img/icons/Polygon 5.svg" alt=""></button>
-            <button class="prav"><img src="img/icons/Polygon 5.svg" alt=""></button>
+    <div id="carouselExampleControlsNoTouching" class="carousel slide container5" data-bs-touch="false" data-bs-interval="false">
+        <img class="border" src="../img/Rectangle 77 (1).png" alt="">
+        <div class="carousel-inner c5gallery" style="margin-left: 10vw;">
+        <div class="gall carousel-item active">
+            <?php $count = 0; $max = count($img_array); ?>
+            @foreach ($img_array as $img)
+                <img src="../<?= $img ?>" alt="">
+                <?php 
+                    $count++;
+                    if($count == 6 && $count != $max){
+                        echo '</div><div class="gall carousel-item">';
+                        $count = 0;   
+                    }
+                ?>
+            @endforeach
         </div>
-
-    </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
     <div class="container1">
 
@@ -70,24 +77,22 @@
             <h2>Доступные туры</h2>
 
         </div>
-
+        @foreach ($tours as $tour)
         <div class="c1tours">
-
-            <div class="c1tour">
-                <img src="img/Rectangle 95.png" alt="">
+            <a class="c1tour" href=" <?= url('/tour'."/".$tour['id']) ?> ">
+                <img src="../<?= $tour["main_img"] ?>" alt="">
                 <div class="c1img"></div>
                 <div class="c1tourtext">
-                    <h4>Восхождение на Эльбрус</h4>
+                    <h4>Тур на <?= $tour["title"] ?></h4>
                     <div class="c1tourp">
-                        <p>31.02.2050</p>
-                        <p>10 дней</p>
-                        <p>23 000 рублей</p>
+                        <p><?= $tour["complexity"] ?> сложность</p>
+                        <p><?= $tour["date"] ?> дней</p>
+                        <p><?= $tour["priсe"] ?> рублей</p>
                     </div>
-
                 </div>
-            </div>
+            </a>
         </div>
-
+        @endforeach
 
     </div>
     <div class="container3">
@@ -102,19 +107,16 @@
             <button>Адрес офиса</button>
         </div>
         <div class="temn">
-            <a href="index.html"><img class="logo" src="img/icons/icons8-нравится-100 1.png" alt=""></a>
+            <a href="<?= url('/') ?>"><img class="logo" src="../img/icons/icons8-нравится-100 1.png" alt=""></a>
             <p>Все права защищены</p>
 
-            <div class="icons"><a href="#"><img src="img/icons/icons8-vk-96 1.png" alt=""></a> <a href="#"><img
-                        src="img/icons/icons8-новый-пост-96 1.png" alt=""></a><a href="#"><img
-                        src="img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
+            <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a href="#"><img
+                        src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a href="#"><img
+                        src="../img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
             </div>
         </div>
-
-
-
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -176,8 +176,9 @@ clip-path: polygon(0% 130%, 100% 130%, 50% 0%);
 margin: 0vw 0vw;
 }
 
-
-
+*, ::after, ::before {
+    box-sizing: content-box;
+}
 
 
 
@@ -264,6 +265,7 @@ margin: 0vw 0vw;
 
 .border{
 height: 70vh;
+border: none !important;
 }
 
 .c5gallery{
@@ -272,7 +274,6 @@ height: 70vh;
 }
 
 .gall{
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 width: 100%;
@@ -446,7 +447,7 @@ margin: 0vw 5vw  0vw -31vh;
     margin-top: 1.6vw;
     margin-left: 5vw;
 display: block;
-width: 39%;
+width: 50%;
 }
 
 .c1tourp h5{

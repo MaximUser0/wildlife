@@ -428,6 +428,7 @@ background: linear-gradient(180deg, #201F23 0%, #2D2325 100%);
 
 .border{
 height: 70vh;
+border: none !important;
 }
 
 .c5gallery{
@@ -436,7 +437,6 @@ height: 70vh;
 }
 
 .gall{
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 width: 100%;
@@ -566,7 +566,9 @@ footer p {
     display: none;
 }
 
-
+*, ::after, ::before {
+    box-sizing: content-box;
+}
 
 
 @media (max-width: 450px) {

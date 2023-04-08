@@ -9,16 +9,17 @@ $features = explode("%" ,$array['features'])
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800;600;700&display=swap"
         rel="stylesheet">
-
+        
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/tour.css">
 
-    <title>Эльбрус</title>
+    <title><?= $array['title'] ?></title>
 
 </head>
 
@@ -68,24 +69,42 @@ $features = explode("%" ,$array['features'])
         </div><img src="../img/Polygon 7.png" alt=""></div>
 
     </header>
-
-    <div class="container5">
-        <img class="border" src="img/Rectangle 77 (1).png" alt="">
+    <div id="carouselExampleControlsNoTouching" class="carousel slide container5" data-bs-touch="false" data-bs-interval="false">
+        <img class="border" src="../img/Rectangle 77 (1).png" alt="">
+        <div class="carousel-inner c5gallery" style="margin-left: 10vw;">
+        <div class="gall carousel-item active">
+            <?php $count = 0; $max = count($img_array); ?>
+            @foreach ($img_array as $img)
+                <img src="../<?= $img ?>" alt="">
+                <?php 
+                    $count++;
+                    if($count == 6 && $count != $max){
+                        echo '</div><div class="gall carousel-item">';
+                        $count = 0;   
+                    }
+                ?>
+            @endforeach
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!--<div class="container5">
+        <img class="border" src="../img/Rectangle 77 (1).png" alt="">
         <div class="c5gallery">
 
-            <div class="gall">
-                <img src="../img/Rectangle 78.png" alt="">
-                <img src="../img/Rectangle 79.png" alt="">
-                <img src="../img/Rectangle 80.png" alt="">
-                <img src="../img/Rectangle 81.png" alt="">
-                <img src="../img/Rectangle 82.png" alt="">
-                <img src="../img/Rectangle 83.png" alt="">
-            </div>
+            
             <button class="lev"><img src="../img/icons/Polygon 5.svg" alt=""></button>
             <button class="prav"><img src="../img/icons/Polygon 5.svg" alt=""></button>
         </div>
 
-    </div>
+    </div>-->
 
     <div class="container10">
 
@@ -121,65 +140,82 @@ $features = explode("%" ,$array['features'])
     </div>
 
 
-    <div class="container1">
+    <div class="container1" style="padding-bottom: 0;">
 
         <div class="c1text">
             <h2>Отзывы</h2>
-
         </div>
 
-        <div class="c1tours">
-
-            <div class="c1tour">
-                <div class="vert"> <h4>Отзыв</h4></div>
-                <div class="c1tourtext">
-                    <div class="c1tourp">
-                        <h5>Татьяна, 31.02.2050</h5>
-                        <p>Незабываемое приключение! Столько эмоций. Свежий воздух, захватывающие виды и прекрасный Кавказ.</p>
+        <div id="carouselExample" class="carousel slide" data-bs-touch="false" data-bs-interval="false" style="margin-right: 10vw; margin-left: 10vw;">
+            <div class="carousel-inner" style="margin: 7vw 20vw; width: 40vw;">
+            <div class="carousel-item active">
+                <div class="c1tour">
+                    <div class="vert"> <h4>Отзыв</h4></div>
+                    <div class="c1tourtext">
+                        <div class="c1tourp">
+                            <h5>Татьяна, 31.02.2050</h5>
+                            <p>Незабываемое приключение! Столько эмоций. Свежий воздух, захватывающие виды и прекрасный Кавказ.</p>
+                        </div>
                     </div>
-
+                    <div class="c1photos">
+                        <img src="../img/image 11.png" alt="">
+                        <img src="../img/image 9.png" alt="">
+                        <img src="../img/Rectangle 159.png" alt="">
+                    </div>
                 </div>
-                <div class="c1photos">
-                    <img src="../img/image 11.png" alt="">
-                    <img src="../img/image 9.png" alt="">
-                    <img src="../img/Rectangle 159.png" alt="">
-                </div>
-
             </div>
+            <div class="carousel-item">
+                <div class="c1tour">
+                    <div class="vert"> <h4>Отзыв</h4></div>
+                    <div class="c1tourtext">
+                        <div class="c1tourp">
+                            <h5>Татьяна, 31.02.2050</h5>
+                            <p>Незабываемое приключение! Столько эмоций. Свежий воздух, захватывающие виды и прекрасный Кавказ.</p>
+                        </div>
+                    </div>
+                    <div class="c1photos">
+                        <img src="../img/image 11.png" alt="">
+                        <img src="../img/image 9.png" alt="">
+                        <img src="../img/Rectangle 159.png" alt="">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
-        <button class="lev1"><img src="../img/icons/Polygon 5.svg" alt=""></button>
-        <button class="prav1"><img src="../img/icons/Polygon 5.svg" alt=""></button>
-</div>
-
-
-
-    <div class="container3">
+    </div>
+    <div class="container3 position-relative">
         <img src="../img/Rectangle 195.png" alt="">
         <form action="">
             <h2>Присоединитесь к туру?</h2>
             <h4>Заполните форму и с Вами свяжутся</h4>
             <h3>Персональные данные</h3>
             <h4>ФИО</h4>
-            <input type="text">
+            <input type="text" required>
             <h4>Дата рождения</h4>
-            <input type="date">
+            <input type="date" required>
             <h3>Способ оплаты</h3>
             <h4>Электронная почта</h4>
-            <input type="email">
+            <input type="email" required>
             <h4>Номер телефона</h4>
-            <input type="text" inputmode="numeric" placeholder="+7 000 000 00 00">
+            <input type="text" inputmode="numeric" placeholder="+7 000 000 00 00" required>
             <h4>Способ оплаты</h4>
-            <input type="text" placeholder="0000 0000 0000 0000" inputmode="numeric" pattern="[0-9 ]*">
+            <input type="text" placeholder="0000 0000 0000 0000" inputmode="numeric" pattern="[0-9]{16}" required>
             <button type="submit">Отправить</button>
             <p>Все персональные данные официально передаются доверенному лицу, подписавшему договор о неразглашении</p>
-
         </form>
         <div class="c3img">        <img class="img1" src="../img/Rectangle 264.png" alt="">
         <img class="img2" src="../img/Rectangle 265.png" alt=""></div>
-
+        
     </div>
-
+    
     <footer>
         <h2>Свяжитесь с нами</h2>
         <div class="svetl">
@@ -200,7 +236,7 @@ $features = explode("%" ,$array['features'])
 
 
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

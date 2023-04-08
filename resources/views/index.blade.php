@@ -96,17 +96,17 @@
         <div class="places">
             <?php 
             $count = -1;
-            $max = count($places) - 1;
+            $max = count($places);
             ?>
             @foreach ($places as $place)
             <?php $count++; 
             if($count == 2){
                 echo'<div class="hidden mb-2 content-center">';
-                $max+=10;
+                $max-=1;
             } 
             ?>
             @if ($count % 2 != 0)
-            <a class="place1" href="<?= url('/place') ?>">
+            <a class="place1" href="<?= url('/place')."/".$place["id"] ?>">
                 <div><img src="<?=$place['main_img']?>" alt=""></div>
                 <div class="c2t1">
                     <h3><?=$place['title']?></h3>
@@ -114,7 +114,7 @@
                 </div>
             </a>
             @else
-            <a class="place2" href="<?= url('/place') ?>">
+            <a class="place2" href="<?= url('/place')."/".$place["id"] ?>">
                 <div class="c2t2">
                     <h3><?=$place['title']?></h3>
                     <p><?=explode("." , $place['description'])[0]."."?></p>
@@ -171,24 +171,32 @@
         </div>
 
     </div>
-
-    <div class="container5">
-        <img class="border" src="img/icons/Rectangle 77.png" alt="">
-        <div class="c5gallery">
-
-            <div class="gall">
-                <img src="img/Rectangle 78.png" alt="">
-                <img src="img/Rectangle 79.png" alt="">
-                <img src="img/Rectangle 80.png" alt="">
-                <img src="img/Rectangle 81.png" alt="">
-                <img src="img/Rectangle 82.png" alt="">
-                <img src="img/Rectangle 83.png" alt="">
-            </div>
-            <button class="lev"><img src="img/icons/Polygon 5.svg" alt=""></button>
-            <button class="prav"><img src="img/icons/Polygon 5.svg" alt=""></button>
+    <div id="carouselExampleControlsNoTouching" class="carousel slide container5" data-bs-touch="false" data-bs-interval="false">
+        <img class="border" src="../img/Rectangle 77 (1).png" alt="">
+        <div class="carousel-inner c5gallery" style="margin-left: 10vw;">
+        <div class="gall carousel-item active">
+            <?php $count = 0; $max = count($img_array); ?>
+            @foreach ($img_array as $img)
+                <img src="<?= $img ?>" alt="">
+                <?php 
+                    $count++;
+                    if($count == 6 && $count != $max){
+                        echo '</div><div class="gall carousel-item">';
+                        $count = 0;   
+                    }
+                ?>
+            @endforeach
         </div>
-
-    </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
 
     <footer>
