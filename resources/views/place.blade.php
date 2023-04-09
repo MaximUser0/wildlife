@@ -98,25 +98,25 @@
     <div class="container3">
 
     </div>
-
     <footer>
         <h2>Свяжитесь с нами</h2>
         <div class="svetl">
-            <button>Почта</button>
-            <button>Телефон</button>
-            <button>Адрес офиса</button>
+            <button id="gmailHover">Почта</button>
+            <button id="numberHover">Телефон</button>
+            <button id="adresHover">Адрес офиса</button>
         </div>
         <div class="temn">
             <a href="<?= url('/') ?>"><img class="logo" src="../img/icons/icons8-нравится-100 1.png" alt=""></a>
             <p>Все права защищены</p>
-
-            <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a href="#"><img
-                        src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a href="#"><img
-                        src="../img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
+            <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a
+                    href="#"><img src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a
+                    href="#"><img src="../img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
             </div>
         </div>
+        <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
+    <script src=" {{ url('js/bootstrap.min.js') }} "></script>
+    <script src=" {{ url('js/main.js') }} "></script>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

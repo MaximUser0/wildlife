@@ -635,10 +635,10 @@ footer button {
     height: 3.4vw;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #FFFFFF;
-    border-radius: 100px;
+    border-radius: 25px;
     font-weight: 400;
     font-size: 1.3vw;
-    margin: 6vw 5vw 0 0vw;
+    margin: 6vw 2.5vw 0 2.5vw;
     cursor: pointer;
 }
 

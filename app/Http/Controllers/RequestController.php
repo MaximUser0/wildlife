@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ImgTour;
 use App\Models\Request as ModelsRequest;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 
 class RequestController extends Controller
@@ -34,6 +36,7 @@ class RequestController extends Controller
             "card_number" => $request['card_number'],
         ]);
         echo response("Successfully created", 200);
+        return back()->withInput();
     }
 
     /**

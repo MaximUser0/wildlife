@@ -193,21 +193,22 @@ $features = explode("%" ,$array['features'])
     </div>
     <div class="container3 position-relative">
         <img src="../img/Rectangle 195.png" alt="">
-        <form action="">
+        <form action="http://wildlife/api/request" method="POST">
+            <input name="id_tour" class="d-none" value="<?= $array['id'] ?>">
             <h2>Присоединитесь к туру?</h2>
             <h4>Заполните форму и с Вами свяжутся</h4>
             <h3>Персональные данные</h3>
             <h4>ФИО</h4>
-            <input type="text" required>
+            <input type="text" name="name" pattern="^[а-яА-ЯёЁ][а-яА-ЯёЁ0-9-_\.]{1,40}\s[а-яА-ЯёЁ][а-яА-ЯёЁ0-9-_\.]{1,40}\s[а-яА-ЯёЁ][а-яА-ЯёЁ0-9-_\.\s]{1,40}" required>
             <h4>Дата рождения</h4>
-            <input type="date" required>
+            <input type="date" name="date_born" required>
             <h3>Способ оплаты</h3>
             <h4>Электронная почта</h4>
-            <input type="email" required>
+            <input name="gmail" type="email" required>
             <h4>Номер телефона</h4>
-            <input type="text" inputmode="numeric" placeholder="+7 000 000 00 00" required>
+            <input name="phone_number" type="text" inputmode="numeric" placeholder="+7 000 000 00 00" required>
             <h4>Способ оплаты</h4>
-            <input type="text" placeholder="0000 0000 0000 0000" inputmode="numeric" pattern="[0-9]{16}" required>
+            <input name="card_number" type="text" placeholder="0000 0000 0000 0000" inputmode="numeric" pattern="[0-9]{13,16}" required>
             <button type="submit">Отправить</button>
             <p>Все персональные данные официально передаются доверенному лицу, подписавшему договор о неразглашении</p>
         </form>
@@ -215,28 +216,24 @@ $features = explode("%" ,$array['features'])
         <img class="img2" src="../img/Rectangle 265.png" alt=""></div>
         
     </div>
-    
     <footer>
         <h2>Свяжитесь с нами</h2>
         <div class="svetl">
-            <button>Почта</button>
-            <button>Телефон</button>
-            <button>Адрес офиса</button>
+            <button id="gmailHover">Почта</button>
+            <button id="numberHover">Телефон</button>
+            <button id="adresHover">Адрес офиса</button>
         </div>
         <div class="temn">
             <a href="<?= url('/') ?>"><img class="logo" src="../img/icons/icons8-нравится-100 1.png" alt=""></a>
             <p>Все права защищены</p>
-
-            <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a href="#"><img
-                        src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a href="#"><img
-                        src="../img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
+            <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a
+                    href="#"><img src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a
+                    href="#"><img src="../img/icons/icons8-телеграмма-app-96 1.png" alt=""></a>
             </div>
         </div>
-
-
-
+    <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
+    <script src=" {{ url('js/bootstrap.min.js') }} "></script>
+    <script src=" {{ url('js/main.js') }} "></script>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
-
 </html>
