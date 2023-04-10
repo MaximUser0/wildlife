@@ -13,39 +13,23 @@
 
 </head>
 
+<?= view('components/header') ?>
+
 <body style="overflow-x: hidden;">
 
-    <header>
-
-        <nav>
-            <div class="nav1">
-
-                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
-                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
-            </div>
-            <div class="theader"><a href="<?= url('/') ?>"><img class="logotip"
-            src=" {{ url('img/loge.svg') }} " alt="Логотип"></a>
-
-            </div>
-            <div class="nav2">
-                <li> <a class="reg" href="adminzayavka.html"></a></li>
-
-            </div>
-        </nav>
-    </header>
     <form method="post" enctype="multipart/form-data">
     <div class="container4" id="mastersid">
 
         <div class="obsh">
             <h3>Название</h3>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?= $places['title'] ?>">
             <h3>Заголовок</h3>
-            <input type="text" name="place">
+            <input type="text" name="place" value="<?= $places['title_description'] ?>">
             <h3>Краткая информация</h3>
-            <textarea name="kratinfo"></textarea>
+            <textarea name="kratinfo"><?= $places['short_description'] ?></textarea>
             <h3>Общая информация</h3>
-            <textarea name="dopinfo"></textarea>
-            <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" src="img/icons/Arrow 2.png"
+            <textarea name="dopinfo"><?= $places['description'] ?></textarea>
+            <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" style="width: 3vw; height: 3vw;" src="../../../img/icons/Group 13.png"
                     alt=""></a>
         </div>
         <div class="photo">
@@ -54,9 +38,7 @@
                 <input type="file" name="file">
                 <span>Выберите файл</span>
             </label>
-
-            <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
-
+            <img src="../../../<?= $places['main_img'] ?>" alt="">
         </div>
         <div class="portfolioadm">
             <div class="butts">
@@ -65,72 +47,17 @@
                     <input type="file" name="file">
                     <span>Выберите файл</span>
                 </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
+                
             </div>
             <div class="portfolio">
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
+                @foreach ($img_place as $src)
+                <div class="hover-effect-btn"><img src="../../../<?= $src ?>" alt="">
                     <div class="overlay"></div>
                     <div class="button"><a href="#">x</a></div>
                 </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                    </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                
-                <button type="submit">Редактировать</button>
+                @endforeach
+                <button style="height: 5vw; margin-top: 15vw;" type="submit">Редактировать</button>
             </div>
-        
         </div>
 
     </div>

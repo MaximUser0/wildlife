@@ -13,28 +13,14 @@
 
 </head>
 
-<body style="overflow-x: hidden;">
+<?= view('components/header') ?>
 
-    <header>
-        <nav>
-            <div class="theader">
-                <a href="<?= url('/') ?>">
-                    <img class="logotip" src=" {{ url('img/loge.svg') }} " alt="Логотип">
-                </a>
-            </div>
-            <div class="nav1">
-                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
-                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
-                <li><a class="reg" href="<?= url('/admin/request') ?>">Запросы на туры</a></li>
-            </div>
-        </nav>
-    </header>
+<body style="overflow-x: hidden;">
 
     <div class="container4" id="mastersid">
         <a href="<?= url('/admin/add/tour') ?>">
             <h2>Добавить тур +</h2>
         </a>
-
         <div class="masters">
             <a href="<?= url('/tour') ?>">
                 <div class="mast">

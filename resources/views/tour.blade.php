@@ -1,4 +1,4 @@
-<?php 
+<?php
 $features = explode("%" ,$array['features'])
 ?>
 
@@ -15,7 +15,7 @@ $features = explode("%" ,$array['features'])
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Inter&family=Ruda:wght@400;500;800;600;700&display=swap"
         rel="stylesheet">
-        
+
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/tour.css">
 
@@ -76,11 +76,11 @@ $features = explode("%" ,$array['features'])
             <?php $count = 0; $max = count($img_array); ?>
             @foreach ($img_array as $img)
                 <img src="../<?= $img ?>" alt="">
-                <?php 
+                <?php
                     $count++;
                     if($count == 6 && $count != $max){
                         echo '</div><div class="gall carousel-item">';
-                        $count = 0;   
+                        $count = 0;
                     }
                 ?>
             @endforeach
@@ -95,16 +95,6 @@ $features = explode("%" ,$array['features'])
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    <!--<div class="container5">
-        <img class="border" src="../img/Rectangle 77 (1).png" alt="">
-        <div class="c5gallery">
-
-            
-            <button class="lev"><img src="../img/icons/Polygon 5.svg" alt=""></button>
-            <button class="prav"><img src="../img/icons/Polygon 5.svg" alt=""></button>
-        </div>
-
-    </div>-->
 
     <div class="container10">
 
@@ -214,7 +204,7 @@ $features = explode("%" ,$array['features'])
         </form>
         <div class="c3img">        <img class="img1" src="../img/Rectangle 264.png" alt="">
         <img class="img2" src="../img/Rectangle 265.png" alt=""></div>
-        
+
     </div>
     <footer>
         <h2>Свяжитесь с нами</h2>

@@ -13,26 +13,10 @@
 
 </head>
 
+<?= view('components/header') ?>
+
 <body style="overflow-x: hidden;">
 
-    <header>
-
-        <nav>
-            <div class="nav1">
-
-                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
-                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
-            </div>
-            <div class="theader"><a href="<?= url('/') ?>"><img class="logotip"
-            src=" {{ url('img/loge.svg') }} " alt="Логотип"></a>
-
-            </div>
-            <div class="nav2">
-                <li> <a class="reg" href="adminzayavka.html"></a></li>
-
-            </div>
-        </nav>
-    </header>
     <form method="post" enctype="multipart/form-data">
     <div class="container4" id="mastersid">
 
@@ -63,13 +47,13 @@
                 <span>Выберите файл</span>
             </label>
 
-          
+
             <h3> Второстепенное фото</h3>
             <label class="input-file">
                 <input type="file" name="file">
                 <span>Выберите файл</span>
-            </label> 
-            
+            </label>
+
 
             <h3>Особенности</h3>
             <input type="text" name="first">
@@ -109,8 +93,8 @@
                     <span>Выберите файл</span>
                 </label>
             </div>
-            
-        
+
+
         </div>
 
     </div>

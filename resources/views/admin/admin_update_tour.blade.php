@@ -13,26 +13,10 @@
 
 </head>
 
+<?= view('components/header') ?>
+
 <body style="overflow-x: hidden;">
 
-    <header>
-
-        <nav>
-            <div class="nav1">
-
-                <li><a class="master" href="<?= url('/admin/place') ?>">Места</a></li>
-                <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
-            </div>
-            <div class="theader"><a href="<?= url('/') ?>"><img class="logotip"
-            src=" {{ url('img/loge.svg') }} " alt="Логотип"></a>
-
-            </div>
-            <div class="nav2">
-                <li> <a class="reg" href="adminzayavka.html"></a></li>
-
-            </div>
-        </nav>
-    </header>
     <form method="post" enctype="multipart/form-data">
     <div class="container4" id="mastersid">
 
@@ -68,7 +52,7 @@
             <label class="input-file">
                 <input type="file" name="file">
                 <span>Выберите файл</span>
-            </label> 
+            </label>
             <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
 
             <h3>Особенности</h3>
@@ -146,10 +130,10 @@
                     <div class="overlay"></div>
                     <div class="button"><a href="#">x</a></div>
                 </div>
-                
+
                 <button type="submit">Редактировать</button>
             </div>
-        
+
         </div>
 
     </div>
