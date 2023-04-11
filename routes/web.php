@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Models\Admin;
 use App\Models\ImgPlace;
 use App\Models\ImgTour;
 use App\Models\Place;
+use App\Models\Request;
 use App\Models\Tour;
 use Illuminate\Support\Facades\Route;
 
@@ -35,10 +38,15 @@ Route::get('/tour/{tour}', function ($id) {
     return view('tour', compact(["array", "img_array"]));
 });
 Route::get('/admin', function () {
-    return view('admin/admin');
+    echo session('name');
+    return view('admin/login');
 });
 Route::get('/admin/tour', function () {
-    return view('admin/admin_tour');
+    if(session('name') != null){
+        return view('admin/admin_tour');
+    } else {
+        return view('admin/login');
+    }
 });
 Route::get('/admin/place', function () {
     $places = Place::get();
@@ -61,3 +69,9 @@ Route::get('/admin/update/place/{place}', function ($id) {
 Route::get('/admin/update/tour', function () {
     return view('admin/admin_update_tour');
 });
+Route::get('/logout', function () {
+    session(["name" => null]);
+    return redirect(url('admin'));
+});
+
+Route::get('/login', [AdminController::class, 'index']);

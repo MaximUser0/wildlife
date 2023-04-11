@@ -47,3 +47,7 @@ table {
 	border-spacing: 0;
 }
 
+.right{
+	position: absolute;
+	right: 0;
+}

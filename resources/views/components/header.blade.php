@@ -10,6 +10,9 @@
             <li><a class="master" href="<?= url('/admin/tour') ?>">Туры</a></li>
             <li><a class="reg" href="<?= url('/admin/request') ?>">Запросы на туры</a></li>
         </div>
+        <div class="nav1 right">
+            <li><a class="master" href="<?= url('/logout') ?>">Выход</a></li>
+        </div>
     </nav>
 </header>
 
