@@ -25,11 +25,14 @@ class ImgPlaceController extends Controller
      */
     public function store(Request $request)
     {
+        $url = "img/download/".time().$_FILES['img']['name'];
+        copy($_FILES['img']['tmp_name'], $url);
         ImgPlace::create([
-            "url" => $request['url'],
+            "url" => $url,
             "id_place" => $request['id_place'],
         ]);
         echo response("Successfully created", 200);
+        return back()->withInput();
     }
 
     /**

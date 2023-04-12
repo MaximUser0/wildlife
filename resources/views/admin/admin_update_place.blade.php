@@ -15,53 +15,56 @@
 
 <?= view('components/header') ?>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden;" style="display: inline-flex">
 
-    <form method="post" enctype="multipart/form-data">
-    <div class="container4" id="mastersid">
-
+    <form action="<?= url('api/place').'/'.$places['id'] ?>" method="POST" enctype="multipart/form-data" style="width: 90%">
+        @method('PATCH')
+        <div class="container4" id="mastersid">
         <div class="obsh">
             <h3>Название</h3>
-            <input type="text" name="name" value="<?= $places['title'] ?>">
+            <input type="text" name="title" value="<?= $places['title'] ?>">
             <h3>Заголовок</h3>
-            <input type="text" name="place" value="<?= $places['title_description'] ?>">
+            <input type="text" name="title_description" value="<?= $places['title_description'] ?>">
             <h3>Краткая информация</h3>
-            <textarea name="kratinfo"><?= $places['short_description'] ?></textarea>
+            <textarea name="short_description"><?= $places['short_description'] ?></textarea>
             <h3>Общая информация</h3>
-            <textarea name="dopinfo"><?= $places['description'] ?></textarea>
+            <textarea name="description"><?= $places['description'] ?></textarea>
             <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" style="width: 3vw; height: 3vw;" src="../../../img/icons/Group 13.png"
                     alt=""></a>
         </div>
         <div class="photo">
             <h3>Главное фото</h3>
             <label class="input-file">
-                <input type="file" name="file">
+                <input type="file" name="main_img">
                 <span>Выберите файл</span>
             </label>
             <img src="../../../<?= $places['main_img'] ?>" alt="">
         </div>
         <div class="portfolioadm">
-            <div class="butts">
-                <h3>Галерея</h3>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                
-            </div>
             <div class="portfolio">
                 @foreach ($img_place as $src)
                 <div class="hover-effect-btn"><img src="../../../<?= $src ?>" alt="">
                     <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
+                    <div class="button"><a href="api/img_place">x</a></div>
                 </div>
                 @endforeach
-                <button style="height: 5vw; margin-top: 15vw;" type="submit">Редактировать</button>
+                <button style="height: 5vw; margin-top: 20vw;" type="submit">Редактировать</button>
             </div>
         </div>
 
-    </div>
+     </div>
     </form>
+    <div class="butts position">
+        <form action="<?= url('api/img_place') ?>" method="POST" enctype="multipart/form-data">
+        <h3>Галерея</h3>
+        <input type="text" name="id_place" class="d-none" value="<?= $places['id'] ?>">
+        <label class="input-file">
+            <input type="file" name="img">
+            <span>Выберите файл</span>
+        </label>
+        <button style="margin: 0; width: 85%;" type="submit">Добавить</button>
+        </form>
+    </div>
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $('.input-file input[type=file]').on('change', function () {

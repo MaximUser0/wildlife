@@ -55,14 +55,26 @@ class PlaceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Place::updateOrCreate(["id" => $id],[
-            "title" => $request['title'],
-            "short_description" => $request['short_description'],
-            "title_description" => $request['title_description'],
-            "description" => $request['description'],
-            "main_img" => $request['main_img']
-        ]);
+        if ($_FILES['main_img']['name'] == null) {
+            Place::updateOrCreate(["id" => $id], [
+                "title" => $request['title'],
+                "short_description" => $request['short_description'],
+                "title_description" => $request['title_description'],
+                "description" => $request['description']
+            ]);
+        } else {
+            $name = "img/download/" . time() . $_FILES['main_img']['name'];
+            copy($_FILES['main_img']['tmp_name'], $name);
+            Place::updateOrCreate(["id" => $id], [
+                "title" => $request['title'],
+                "short_description" => $request['short_description'],
+                "title_description" => $request['title_description'],
+                "description" => $request['description'],
+                "main_img" => $name
+            ]);
+        }
         echo response("Successfully updated", 200);
+        return back()->withInput();
     }
 
     /**
