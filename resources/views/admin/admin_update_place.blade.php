@@ -16,10 +16,10 @@
 <?= view('components/header') ?>
 
 <body style="overflow-x: hidden;" style="display: inline-flex">
-
-    <form action="<?= url('api/place').'/'.$places['id'] ?>" method="POST" enctype="multipart/form-data" style="width: 90%">
+    <div class="container4" id="mastersid">
+    <form action="<?= url('api/place').'/'.$places['id'] ?>" method="POST" enctype="multipart/form-data" style="display: inline-flex;">
         @method('PATCH')
-        <div class="container4" id="mastersid">
+
         <div class="obsh">
             <h3>Название</h3>
             <input type="text" name="title" value="<?= $places['title'] ?>">
@@ -40,21 +40,19 @@
             </label>
             <img src="../../../<?= $places['main_img'] ?>" alt="">
         </div>
-        <div class="portfolioadm">
+        <button style="position: absolute; right: 5vw; bottom: 5vw; height:5vw;" type="submit">Редактировать</button>
+    </form>
+    <div class="portfolioadm">
             <div class="portfolio">
                 @foreach ($img_place as $src)
-                <div class="hover-effect-btn"><img src="../../../<?= $src ?>" alt="">
+                <div class="hover-effect-btn"><img src="../../../<?= $src['url'] ?>" alt="">
                     <div class="overlay"></div>
-                    <div class="button"><a href="api/img_place">x</a></div>
+                    <form action="<?= url('api/img_place').'/'.$src['id'] ?>" method="POST">@method('DELETE')<button class="button" type="submit">x</button></form>
                 </div>
                 @endforeach
-                <button style="height: 5vw; margin-top: 20vw;" type="submit">Редактировать</button>
             </div>
         </div>
-
-     </div>
-    </form>
-    <div class="butts position">
+    <div class="butts">
         <form action="<?= url('api/img_place') ?>" method="POST" enctype="multipart/form-data">
         <h3>Галерея</h3>
         <input type="text" name="id_place" class="d-none" value="<?= $places['id'] ?>">
@@ -65,12 +63,17 @@
         <button style="margin: 0; width: 85%;" type="submit">Добавить</button>
         </form>
     </div>
+</div>
+
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $('.input-file input[type=file]').on('change', function () {
             let file = this.files[0];
             $(this).next().html(file.name);
         });
+        function hrefDelete(){
+
+        }
     </script>
 
 </body>

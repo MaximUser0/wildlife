@@ -63,7 +63,8 @@ Route::get('/admin/add/tour', function () {
 });
 Route::get('/admin/update/place/{place}', function ($id) {
     $places = Place::find($id);
-    $img_place = ImgPlace::where('id_place', '=', $id)->pluck('url');
+    $img_place = ImgPlace::where('id_place', '=', $id)->get()->toArray();
+    print_r($img_place);
     return view('admin/admin_update_place', compact(["places", "img_place"]));
 });
 Route::get('/admin/update/tour', function () {

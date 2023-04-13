@@ -23,10 +23,6 @@
             @foreach ($places as $place)
             <a class="place1" href="<?= url('/place')."/".$place["id"] ?>">
                 <div><img src="<?=$place['main_img']?>" alt=""></div>
-                <div class="c2t1">
-                    <h3><?=$place['title']?></h3>
-                    <p><?=explode("." , $place['description'])[0]."."?></p>
-                </div>
             </a>
             <a href="<?= url('/place')."/".$place["id"] ?>">
                 <div class="mast">
