@@ -25,14 +25,17 @@ class PlaceController extends Controller
      */
     public function store(Request $request)
     {
+        $name = "img/download/" . time() . $_FILES['main_img']['name'];
+        copy($_FILES['main_img']['tmp_name'], $name);
         Place::create([
             "title" => $request['title'],
             "short_description" => $request['short_description'],
             "title_description" => $request['title_description'],
             "description" => $request['description'],
-            "main_img" => $request['main_img']
+            "main_img" => $name
         ]);
         echo response("Successfully created", 200);
+        return back()->withInput();
     }
 
     /**

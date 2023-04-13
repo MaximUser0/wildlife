@@ -61,19 +61,57 @@ class TourController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Tour::updateOrCreate(["id" => $id], [
-            "id_place" => $request['id_place'],
-            "title" => $request['title'],
-            "short_description" => $request['short_description'],
-            "description" => $request['description'],
-            "people_count" => $request['people_count'],
-            "priсe" => $request['priсe'],
-            "main_img" => $request['main_img'],
-            "description_img" => $request['description_img'],
-            "complexity" => $request['complexity'],
-            "features" => $request['features'],
-        ]);
+        if ($_FILES['main_img']['name'] == null) {
+            if ($_FILES['description_img']['name'] == null) {
+                $features = $request['f1'].'%'.$request['f2'].'%'.$request['f3'].'%'.$request['f4'];
+                Tour::updateOrCreate(["id" => $id], [
+                    "id_place" => $request['id_place'],
+                    "title" => $request['title'],
+                    "short_description" => $request['short_description'],
+                    "description" => $request['description'],
+                    "people_count" => $request['people_count'],
+                    "priсe" => $request['priсe'],
+                    "complexity" => $request['complexity'],
+                    "features" => $features,
+                ]);
+            } else {
+                $desName = "img/download/" . time() . $_FILES['description_img']['name'];
+                copy($_FILES['description_img']['tmp_name'], $desName);
+                $features = $request['f1'].'%'.$request['f2'].'%'.$request['f3'].'%'.$request['f4'];
+                Tour::updateOrCreate(["id" => $id], [
+                    "id_place" => $request['id_place'],
+                    "title" => $request['title'],
+                    "short_description" => $request['short_description'],
+                    "description" => $request['description'],
+                    "people_count" => $request['people_count'],
+                    "priсe" => $request['priсe'],
+                    "description_img" => $desName,
+                    "complexity" => $request['complexity'],
+                    "features" => $features,
+                ]);
+            }
+        } else {
+            $name = "img/download/" . time() . $_FILES['main_img']['name'];
+            copy($_FILES['main_img']['tmp_name'], $name);
+            $desName = "img/download/" . time() . $_FILES['description_img']['name'];
+            copy($_FILES['description_img']['tmp_name'], $desName);
+            $features = $request['f1'].'%'.$request['f2'].'%'.$request['f3'].'%'.$request['f4'];
+            Tour::updateOrCreate(["id" => $id], [
+                "id_place" => $request['id_place'],
+                "title" => $request['title'],
+                "short_description" => $request['short_description'],
+                "description" => $request['description'],
+                "people_count" => $request['people_count'],
+                "priсe" => $request['priсe'],
+                "main_img" => $name,
+                "description_img" => $desName,
+                "complexity" => $request['complexity'],
+                "features" => $features,
+            ]);
+        }
+        
         echo response("Successfully updated", 200);
+        return back()->withInput();
     }
 
     /**

@@ -18,23 +18,35 @@
 <body style="overflow-x: hidden;">
 
     <div class="container4" id="mastersid">
-        <a href="<?= url('/admin/add/tour') ?>">
-            <h2>Добавить тур +</h2>
-        </a>
+        <a href="<?= url('admin/add/tour') ?>"><h2>Добавить тур +</h2></a>
         <div class="masters">
-            <a href="<?= url('/tour') ?>">
+            @foreach ($tours as $tour)
+            <a href="<?= url('/tour')."/".$tour["id"] ?>">
                 <div class="mast">
-                    <img src=" {{ url('img/Rectangle 16.png') }} " alt="">
+                    <img src="../<?=$tour['main_img']?>" alt="">
                     <div class="title">
-                        <p>Эльбрус</p>
+                        <p><?=$tour['title']?></p>
                     </div>
-                    <div class="name">
-                        <a href="<?= url('/admin/update/tour') ?>"><button class="red">Редактировать</button></a>
-                        <button class="x">x</button>
+                    <div class="name" style="display: inline-flex;">
+                        <a href="<?= url('admin/update/tour')."/".$tour["id"] ?>"><button class="red">Редактировать</button></a>
+                        <button id-tour="<?= $tour["id"] ?>" class="x">x</button>
                     </div>
                 </div>
             </a>
+            @endforeach
         </div>
+        <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
+        <script>
+            $('.name > button').click(ConfirmDelete);
+            async function ConfirmDelete(){
+                let id = await $(this).attr('id-tour');
+                let flag = confirm('Удалить тур?');
+                if(flag){
+                    await fetch("http://wildlife/api/tour/"+id, {method: 'DELETE'});
+                }
+                location.reload();
+            }
+        </script>
 </body>
 
 </html>

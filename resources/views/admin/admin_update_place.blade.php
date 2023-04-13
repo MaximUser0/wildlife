@@ -71,9 +71,6 @@
             let file = this.files[0];
             $(this).next().html(file.name);
         });
-        function hrefDelete(){
-
-        }
     </script>
 
 </body>

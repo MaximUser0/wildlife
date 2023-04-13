@@ -15,65 +15,34 @@
 
 <?= view('components/header') ?>
 
-<body style="overflow-x: hidden;">
-    <form method="post" enctype="multipart/form-data">
-        <div class="container4" id="mastersid">
-
-            <div class="obsh">
-                <h3>Имя</h3>
-                <input type="text" name="name">
-                <h3>Общая информация</h3>
-                <textarea name="dopinfo"></textarea>
-                <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" src="img/icons/Arrow 2.png"
-                        alt=""></a>
-            </div>
-            <div class="photo">
-                <h3>Фото мастера</h3>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-
-
-            </div>
-            <div class="portfolioadm">
-                <div class="butts">
-                    <h3>Портфолио</h3>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                    <label class="input-file">
-                        <input type="file" name="file">
-                        <span>Выберите файл</span>
-                    </label>
-                </div>
-
-
-            </div>
-
-    </div>
+<body style="overflow-x: hidden;" style="display: inline-flex">
+    <div class="container4" id="mastersid">
+    <form action="<?= url('api/place')?>" method="POST" enctype="multipart/form-data" style="display: inline-flex;">
+        <div class="obsh">
+            <h3>Название</h3>
+            <input type="text" name="title"">
+            <h3>Краткая информация</h3>
+            <textarea name="short_description"></textarea>
+            <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" style="width: 3vw; height: 3vw;" src="../../../img/icons/Group 13.png"
+                    alt=""></a>
+        </div>
+        <div class="obsh">
+            <h3>Заголовок</h3>
+            <input type="text" name="title_description" ?>
+            <h3>Общая информация</h3>
+            <textarea name="description"></textarea>
+        </div>
+        <div class="photo">
+            <h3>Главное фото</h3>
+            <label class="input-file">
+                <input type="file" name="main_img">
+                <span>Выберите файл</span>
+            </label>
+        </div>
+        <button style="position: absolute; right: 5vw; bottom: 5vw; height:5vw;" type="submit">Создать</button>
     </form>
+</div>
+
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $('.input-file input[type=file]').on('change', function () {

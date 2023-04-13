@@ -18,12 +18,9 @@
 <body style="overflow-x: hidden;">
 
     <div class="container4" id="mastersid">
-        <a href="adminaddmesto.html"><h2>Добавить место +</h2></a>
+        <a href="<?= url('admin/add/place') ?>"><h2>Добавить место +</h2></a>
         <div class="masters">
             @foreach ($places as $place)
-            <a class="place1" href="<?= url('/place')."/".$place["id"] ?>">
-                <div><img src="<?=$place['main_img']?>" alt=""></div>
-            </a>
             <a href="<?= url('/place')."/".$place["id"] ?>">
                 <div class="mast">
                     <img src="../<?=$place['main_img']?>" alt="">
@@ -32,12 +29,23 @@
                     </div>
                     <div class="name" style="display: inline-flex;">
                         <a href="<?= url('admin/update/place')."/".$place["id"] ?>"><button class="red">Редактировать</button></a>
-                        <button id="delete" id-place="<?= $place["id"] ?>" class="x">x</button>
+                        <button id-place="<?= $place["id"] ?>" class="x">x</button>
                     </div>
                 </div>
             </a>
             @endforeach
         </div>
+        <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
+        <script>
+            $('.name > button').click(ConfirmDelete);
+            async function ConfirmDelete(){
+                let id = await $(this).attr('id-place');
+                let flag = confirm('Удалить место?');
+                if(flag){
+                    await fetch("http://wildlife/api/place/"+id, {method: 'DELETE'});
+                }
+                location.reload();
+            }
+        </script>
 </body>
-
 </html>
