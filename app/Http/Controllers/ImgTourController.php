@@ -25,11 +25,14 @@ class ImgTourController extends Controller
      */
     public function store(Request $request)
     {
+        $name = "img/download/" . time() . $_FILES['url']['name'];
+        copy($_FILES['url']['tmp_name'], $name);
         ImgTour::create([
-            "url" => $request['url'],
+            "url" => $name,
             "id_tour" => $request['id_tour'],
         ]);
         echo response("Successfully created", 200);
+        return back()->withInput();
     }
 
     /**
@@ -69,5 +72,6 @@ class ImgTourController extends Controller
     {
         ImgTour::findOrFail($id)->delete();
         echo response("", 204);
+        return back()->withInput();
     }
 }

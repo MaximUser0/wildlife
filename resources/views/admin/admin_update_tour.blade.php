@@ -64,7 +64,7 @@
             <h3>Галерея</h3>
             <input type="text" name="id_tour" class="d-none" value="<?= $tours['id'] ?>">
             <label class="input-file">
-                <input type="file" name="img">
+                <input type="file" name="url">
                 <span>Выберите файл</span>
             </label>
             <button style="margin: 0; width: 85%;" type="submit">Добавить</button>
@@ -81,129 +81,6 @@
                 </div>
             </div>
     </div>
-
-<!--
-    <form method="post" enctype="multipart/form-data">
-    <div class="container4" id="mastersid">
-
-        <div class="obsh">
-            <h3>Название</h3>
-            <input type="text" name="name">
-            <h3>Место</h3>
-            <input type="text" name="place">
-            <h3>Дата</h3>
-            <input type="date" name="date">
-            <h3>Количество человек</h3>
-            <input type="text" name="count">
-            <h3>Стоимость</h3>
-            <input type="text" name="cost">
-            <h3>Длительность</h3>
-            <input type="text" name="long">
-            <h3>Краткая информация</h3>
-            <textarea name="kratinfo"></textarea>
-            <h3>Общая информация</h3>
-            <textarea name="dopinfo"></textarea>
-            <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" src="img/icons/Arrow 2.png"
-                    alt=""></a>
-        </div>
-        <div class="photo">
-            <h3>Главное фото</h3>
-            <label class="input-file">
-                <input type="file" name="file">
-                <span>Выберите файл</span>
-            </label>
-
-            <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
-            <h3> Второстепенное фото</h3>
-            <label class="input-file">
-                <input type="file" name="file">
-                <span>Выберите файл</span>
-            </label>
-            <img src="img/masters/1654142324_46-o-tendencii-com-p-devushka-v-tatu-salone-foto-50.jpg" alt="">
-
-            <h3>Особенности</h3>
-            <input type="text" name="first">
-            <input type="text" name="second">
-            <input type="text" name="third">
-            <input type="text" name="fourth">
-        </div>
-        <div class="portfolioadm">
-            <div class="butts">
-                <h3>Галерея</h3>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-                <label class="input-file">
-                    <input type="file" name="file">
-                    <span>Выберите файл</span>
-                </label>
-            </div>
-            <div class="portfolio">
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/57bd2daaf39d79646362586f46150dc0.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-                <div class="hover-effect-btn"><img src="img/458188084ec959df41e7d3091a5c50b4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                    </div>
-                <div class="hover-effect-btn"><img src="img/8112413e4212f19a5909a2bbcf6afc16.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="button"><a href="#">x</a></div>
-                </div>
-
-                <button type="submit">Редактировать</button>
-            </div>
-
-        </div>
-
-    </div>
-    </form>-->
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $('.input-file input[type=file]').on('change', function () {

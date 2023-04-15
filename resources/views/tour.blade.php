@@ -25,7 +25,7 @@ $features = explode("%" ,$array['features'])
 
 <body style="overflow-x: hidden;">
 
-    <header>
+    <header style="background-image: linear-gradient( rgba(45, 27, 27, 0.3) 43.15%, rgba(8, 16, 18, 0.8) 100%), url('../<?= $array['main_img'] ?>');">
 
         <nav>
             <div class="nav1">
@@ -66,7 +66,7 @@ $features = explode("%" ,$array['features'])
         <div class="c0sec"><div class="c0text">
             <h2>Описание</h2>
             <p><?= $array['description'] ?></p>
-        </div><img src="../img/Polygon 7.png" alt=""></div>
+        </div><img src="../<?= $array['description_img'] ?>" alt=""></div>
 
     </header>
     <div id="carouselExampleControlsNoTouching" class="carousel slide container5" data-bs-touch="false" data-bs-interval="false">

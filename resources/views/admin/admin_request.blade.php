@@ -18,33 +18,32 @@
 <body style="overflow-x: hidden;">
 
     <div class="container4">
-        <div class="zayavka">
+        @foreach ($requests as $request)
+        <div class="zayavka" style="position: relative;">
+            <div class="polz" style="margin-top: 2vw">
+                <h2>Клиент:</h2>
+                <p><?=$request['name']?></p>
+                <p><?=$request['date_born']?></p>
+            </div>
             <div class="polz">
-                <p>Namejhdfjvkmfcvghbnmj,</p>
-                <p>Email.\@mail.rudxfcvnbmcxvbnm</p>
-                <p>28.03.2023</p>
+                <h3>Связь:</h3>
+                <p><?=$request['gmail']?></p>
+                <p><?=$request['phone_number']?></p>
+                <p><?=$request['card_number']?></p>
             </div>
-            <div class="telo">
-                <p>Часть тела:</p>
-                <p>sdfghjk</p>
+            <div class="polz">
+                <p>Тур номер:</p>
+                <p><?=$request['id_tour']?></p>
+                <p>Запрос создан:</p>
+                <p><?=$request['created_at']?></p>
             </div>
-            <div class="size">
-                <p>Размер:</p>
-                <p>dfghjk</p>
-            </div>
-            <div class="dop">
-                <p>Дополнительно:</p>
-                <p>sdfghj</p>
-            </div>
-            <div class="otvet">
-                <div class="text">
-                    <p>Ответ мастера:</p>
-                    <textarea name="otv"></textarea>
-                </div>
-                <div class="btn"><button>Отправить</button></div>
-            </div>
-        </div>
-
+            <form action="<?= url('api/request')."/".$request['id']?>" method="POST">
+            @method('DELETE')
+            <div class="btn" style="position: absolute; right: 9vw; bottom: 2vw;"><button type="submit">Принять</button></div>
+            <div class="btn" style="position: absolute; right: 2vw; bottom: 2vw;"><button type="submit">Отказать</button></div>
+            </form>
+        </div>  
+        @endforeach
     </div>
 
 

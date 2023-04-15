@@ -80,5 +80,6 @@ class RequestController extends Controller
     {
         ModelsRequest::findOrFail($id)->delete();
         echo response("", 204);
+        return back()->withInput();
     }
 }

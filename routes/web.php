@@ -54,7 +54,8 @@ Route::get('/admin/place', function () {
     return view('admin/admin_place', compact("places"));
 });
 Route::get('/admin/request', function () {
-    return view('admin/admin_request');
+    $requests = Request::get();
+    return view('admin/admin_request', compact(['requests']));
 });
 Route::get('/admin/add/place', function () {
     return view('admin/admin_add_place');

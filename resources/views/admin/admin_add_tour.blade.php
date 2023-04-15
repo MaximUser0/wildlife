@@ -16,8 +16,53 @@
 <?= view('components/header') ?>
 
 <body style="overflow-x: hidden;">
-
-    <form method="post" enctype="multipart/form-data">
+    <div class="container4" id="mastersid">
+        <form action="<?= url('api/tour') ?>" method="POST" enctype="multipart/form-data" style="display: inline-flex;">
+            <div class="obsh">
+                <h3>Название</h3>
+                <input type="text" name="title" required>
+                <h3>Стоимость</h3>
+                <input type="text" name="priсe" required>
+                <h3>Длительность</h3>
+                <input type="number" name="date" required>
+                <h3>Количество человек</h3>
+                <input type="text" name="people_count" required> 
+                <h3>Сложность</h3>
+                <input type="text" name="complexity" required>
+                <a onclick="javascript:history.back(-2); return falsel"><img class="arrow" style="width: 3vw; height: 3vw;" src="../../../img/icons/Group 13.png"
+                    alt=""></a>
+            </div>
+            <div class="obsh">
+                <h3>Место</h3>
+                <input type="text" name="id_place" required>
+                <h3>Особенности</h3>
+                <input type="text" name="f1" required>
+                <input type="text" name="f2" required>
+                <input type="text" name="f3" required>
+                <input type="text" name="f4" required>
+            </div>
+            <div class="obsh">
+                <h3>Краткая информация</h3>
+                <textarea name="short_description" required></textarea>
+                <h3>Общая информация</h3>
+                <textarea name="description" required></textarea>
+            </div>
+            <div class="obsh photo">
+                <h3>Главное фото</h3>
+                <label class="input-file">
+                    <input type="file" name="main_img" required>
+                    <span>Выберите файл</span>
+                </label>
+                <h3>Дополнительное фото</h3>
+                <label class="input-file">
+                    <input type="file" name="description_img" required>
+                    <span>Выберите файл</span>
+                </label>
+            </div>
+            <button style="position: absolute; right: 5vw; bottom: 1vw; height:5vw;" type="submit">Создать</button>
+        </form>
+    </div>
+    <!--<form method="post" enctype="multipart/form-data">
     <div class="container4" id="mastersid">
 
         <div class="obsh">
@@ -98,7 +143,7 @@
         </div>
 
     </div>
-    </form>
+    </form>-->
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $('.input-file input[type=file]').on('change', function () {

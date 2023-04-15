@@ -377,12 +377,14 @@ background-color: #DC9F72;
 }
 
 .flex{
-position: absolute;
-height: 7vh;
-width: 0;
-/*width: 29vh;*/
-background-color: #DC9F72;
-margin: 0vw 5vw  0vw -31vh;
+    position: absolute;
+    right: 40.5vw;
+    height: 7vh;
+    width: 0;
+    /* width: 29vh; */
+    background-color: #DC9F72;
+    margin: 0vw 5vw 0vw 0vh;
+    transition: 1s;
 }
 
 
