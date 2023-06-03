@@ -70,7 +70,9 @@ class ImgPlaceController extends Controller
      */
     public function destroy($id)
     {
-        ImgPlace::findOrFail($id)->delete();
+        $img  = ImgPlace::findOrFail($id);
+        unlink($img->url);
+        $img->delete();
         echo response("", 204);
         return back()->withInput();
     }

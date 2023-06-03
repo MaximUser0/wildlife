@@ -21,8 +21,14 @@
 
 <body style="overflow-x: hidden;">
 
-    <header>
-
+    <header style="background-image: linear-gradient(180deg, rgba(12, 19, 26, 0.38) 0%, rgba(24, 26, 28, 0.5) 88.5%, rgba(25, 27, 28) 100%), url('../<?= $array['main_img'] ?>)';">
+        <?=
+        '<style>
+            header{
+                background-image: linear-gradient(180deg, rgba(12, 19, 26, 0.38) 0%, rgba(24, 26, 28, 0.5) 88.5%, rgba(25, 27, 28) 100%), url("../'.$array['main_img'].'");
+            }
+        </style>';
+        ?>
         <nav>
             <div class="nav1">
                 <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
@@ -46,7 +52,7 @@
     </header>
     <div id="carouselExampleControlsNoTouching" class="carousel slide container5" data-bs-touch="false" data-bs-interval="false">
         <img class="border" src="../img/Rectangle 77 (1).png" alt="">
-        <div class="carousel-inner c5gallery" style="margin-left: 10vw;">
+        <div class="carousel-inner c5gallery">
         <div class="gall carousel-item active">
             <?php $count = 0; $max = count($img_array); ?>
             @foreach ($img_array as $img)
@@ -106,7 +112,7 @@
             <button id="adresHover">Адрес офиса</button>
         </div>
         <div class="temn">
-            <a href="<?= url('/') ?>"><img class="logo" src="../img/icons/icons8-нравится-100 1.png" alt=""></a>
+            <a href="<?= url('/') ?>"><img class="logo" src="../img/logo.png" alt=""></a>
             <p>Все права защищены</p>
             <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a
                     href="#"><img src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a

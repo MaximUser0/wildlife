@@ -6,11 +6,11 @@
             <li><a class="reg" href="<?= url('/admin/request') ?>">Запросы на туры</a></li>
         </div>
         <div class="nav1 right">
-            <li><a class="master" href="<?= url('/logout') ?>">Выход</a></li>
+            <li><a id="logout">Выход</a></li>
         </div>
         <div class="theader">
             <a href="<?= url('/') ?>">
-                <img class="logotip" src=" {{ url('img/loge.svg') }} " alt="Логотип">
+                <img class="logotip" src=" {{ url('img/logo.png') }} " alt="Логотип">
             </a>
         </div>
     </nav>

@@ -49,7 +49,11 @@
                     <span>Выберите файл</span>
                 </label>
                 <h3>Место</h3>
-                <input type="text" value="<?= $tours['id_place'] ?>" name="id_place">
+                <select name="id_place" required>
+                    @foreach ($places as $place)
+                        <option value="<?=$place['id']?>" <?= $place['id'] == $tours['id_place'] ? 'selected' : ''?>><?=$place['title']?></option>
+                    @endforeach
+                </select>
                 <h3>Особенности</h3>
                 <?php $f = explode("%" ,$tours['features']) ?>
                 <input type="text" name="f1" value="<?= $f[0]?>">
@@ -88,7 +92,8 @@
             $(this).next().html(file.name);
         });
     </script>
-
+  <script src="../../js/auth/checkUser.js"></script>
+  <script src="../../js/auth/logout.js"></script>
 </body>
 
 </html>

@@ -289,7 +289,7 @@ header h3 {
 
 .c5gallery {
     position: absolute;
-    width: 80%;
+    width: 70%;
 }
 
 .gall {
@@ -401,7 +401,8 @@ footer h2 {
 
 .logo {
     margin-left: 10vw;
-    margin-top: 2vw;
+    margin-top: 3.5vw;
+    height: 45%;
 }
 
 
@@ -457,6 +458,7 @@ footer p {
         background-size: cover;
         background-size: 100% 100%;
         height: 90vh;
+        margin-bottom: 20vw;
     }
 
 
@@ -493,7 +495,7 @@ footer p {
     }
 
     .nav2 {
-        width: 62%;
+        width: 60%;
         list-style: none;
         display: flex;
         margin-left: 40vw;
@@ -528,7 +530,7 @@ footer p {
         font-weight: 600;
         font-size: 16px;
         letter-spacing: 0.05em;
-        margin-left: 5vw;
+        margin-left: 23vw;
     }
     
     .c0text {
@@ -546,7 +548,7 @@ footer p {
         font-weight: 600;
         font-size: 16px;
         margin: 3vw 0;
-        line-height: 58px;
+        line-height: 30px;
     }
     
     .c0text p {
@@ -698,17 +700,18 @@ footer p {
         height: 37vh;
     }
 
-    .c5gallery {
+    .c5gallery{
+        margin-left: 6vw;
         position: absolute;
         width: 80%;
     }
-
-    .gall {
-        display: flex;
+    
+    .gall{
         justify-content: center;
         flex-wrap: wrap;
         width: 100%;
         margin-top: 5vh;
+        margin-left: -1vw;
     }
 
     .gall img {
@@ -781,7 +784,8 @@ footer p {
 
     .logo {
         margin-left: 10vw;
-        margin-top: 2vw;
+        margin-top: 11vw;
+        height: 30%;
     }
 
 
@@ -801,7 +805,7 @@ footer p {
         font-size: 5vw;
         margin-top: 40vw;
         position: absolute;
-        width: 80%;
+        width: auto;
     }
 
 

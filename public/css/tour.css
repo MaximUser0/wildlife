@@ -270,7 +270,7 @@ border: none !important;
 
 .c5gallery{
     position: absolute;
-    width: 80%;
+    width: 70%;
 }
 
 .gall{
@@ -278,6 +278,10 @@ border: none !important;
     flex-wrap: wrap;
 width: 100%;
 margin-top: 4.5vw;
+}
+.comment{
+    margin: 7vw 20vw;
+    width: 40vw;
 }
 
 .gall img{
@@ -665,7 +669,8 @@ bottom: 0;
 
 .logo{
     margin-left: 10vw;
-    margin-top: 2vw;
+    margin-top: 3.5vw;
+    height: 45%;
 }
 
 
@@ -753,7 +758,7 @@ footer p {
     }
     
     .nav2 {
-        width: 62%;
+        width: 60%;
         list-style: none;
         display: flex;
         margin-left: 40vw;
@@ -881,16 +886,23 @@ footer p {
     }
     
     .c5gallery{
+        margin-left: 6vw;
         position: absolute;
         width: 80%;
     }
     
     .gall{
-        display: flex;
         justify-content: center;
         flex-wrap: wrap;
-    width: 100%;
-    margin-top: 5vh;
+        width: 100%;
+        margin-top: 5vh;
+        margin-left: -1vw;
+    }
+
+    .comment{
+        margin: 7vw 20vw;
+        width: 80vw;
+        margin-left: 0vw;
     }
     
     .gall img{
@@ -1144,8 +1156,8 @@ display: none;
     
     .c3img{
     display: flex;
-    width: 43.5%;
-    margin-right: -3vw;
+    width: 18%;
+    margin-right: 0;
     }
     
     .c3img img{
@@ -1220,7 +1232,8 @@ display: none;
     
     .logo{
         margin-left: 10vw;
-        margin-top: 2vw;
+        margin-top: 11vw;
+        height: 30%;
     }
     
     
@@ -1240,7 +1253,7 @@ display: none;
         font-size: 5vw;
         margin-top: 40vw;
         position: absolute;
-        width: 80%;
+        width:  auto;
     }
     
 

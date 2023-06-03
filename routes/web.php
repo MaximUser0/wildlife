@@ -42,12 +42,8 @@ Route::get('/admin', function () {
     return view('admin/login');
 });
 Route::get('/admin/tour', function () {
-    if(session('name') != null){
-        $tours = Tour::get();
-        return view('admin/admin_tour', compact("tours"));
-    } else {
-        return view('admin/login');
-    }
+    $tours = Tour::get();
+    return view('admin/admin_tour', compact("tours"));
 });
 Route::get('/admin/place', function () {
     $places = Place::get();
@@ -61,7 +57,8 @@ Route::get('/admin/add/place', function () {
     return view('admin/admin_add_place');
 });
 Route::get('/admin/add/tour', function () {
-    return view('admin/admin_add_tour');
+    $places = Place::all();
+    return view('admin/admin_add_tour', compact('places'));
 });
 Route::get('/admin/update/place/{place}', function ($id) {
     $places = Place::find($id);
@@ -70,8 +67,9 @@ Route::get('/admin/update/place/{place}', function ($id) {
 });
 Route::get('/admin/update/tour/{tour}', function ($id) {
     $tours = Tour::find($id);
+    $places = Place::all();
     $img_tour = ImgTour::where('id_tour', '=', $id)->get()->toArray();
-    return view('admin/admin_update_tour', compact(["tours", "img_tour"]));
+    return view('admin/admin_update_tour', compact(["tours", "img_tour", 'places']));
 });
 Route::get('/logout', function () {
     session(["name" => null]);

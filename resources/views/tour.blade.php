@@ -25,8 +25,22 @@ $features = explode("%" ,$array['features'])
 
 <body style="overflow-x: hidden;">
 
-    <header style="background-image: linear-gradient( rgba(45, 27, 27, 0.3) 43.15%, rgba(8, 16, 18, 0.8) 100%), url('../<?= $array['main_img'] ?>');">
-
+    <header>
+        <?=
+        '<style>
+            header{
+                background-image: linear-gradient( rgba(45, 27, 27, 0.3) 43.15%, rgba(8, 16, 18, 0.8) 100%), url("../'.$array['main_img'].'");
+            }
+            @media (max-width: 450px) {
+            header {
+                background-image: linear-gradient( rgba(45, 27, 27, 0.3) 43.15%, rgba(8, 16, 18, 0.8) 100%), url("../'.$array['main_img'].'");
+                background-size: cover;
+                height: 135vh;
+                background-position-x: center;
+            }
+            }
+        </style>';
+        ?>
         <nav>
             <div class="nav1">
                 <li><a class="main" href="<?= url('/') ?>">WILDLIFE</a></li>
@@ -71,7 +85,7 @@ $features = explode("%" ,$array['features'])
     </header>
     <div id="carouselExampleControlsNoTouching" class="carousel slide container5" data-bs-touch="false" data-bs-interval="false">
         <img class="border" src="../img/Rectangle 77 (1).png" alt="">
-        <div class="carousel-inner c5gallery" style="margin-left: 10vw;">
+        <div class="carousel-inner c5gallery">
         <div class="gall carousel-item active">
             <?php $count = 0; $max = count($img_array); ?>
             @foreach ($img_array as $img)
@@ -137,7 +151,7 @@ $features = explode("%" ,$array['features'])
         </div>
 
         <div id="carouselExample" class="carousel slide" data-bs-touch="false" data-bs-interval="false" style="margin-right: 10vw; margin-left: 10vw;">
-            <div class="carousel-inner" style="margin: 7vw 20vw; width: 40vw;">
+            <div class="carousel-inner comment">
             <div class="carousel-item active">
                 <div class="c1tour">
                     <div class="vert"> <h4>Отзыв</h4></div>
@@ -196,7 +210,7 @@ $features = explode("%" ,$array['features'])
             <h4>Электронная почта</h4>
             <input name="gmail" type="email" required>
             <h4>Номер телефона</h4>
-            <input name="phone_number" type="text" inputmode="numeric" placeholder="+7 000 000 00 00" required>
+            <input id="online_phone" name="phone_number" placeholder="+7(___)___-__-__" type="tel" inputmode="numeric" required>
             <h4>Способ оплаты</h4>
             <input name="card_number" type="text" placeholder="0000 0000 0000 0000" inputmode="numeric" pattern="[0-9]{13,16}" required>
             <button type="submit">Отправить</button>
@@ -214,7 +228,7 @@ $features = explode("%" ,$array['features'])
             <button id="adresHover">Адрес офиса</button>
         </div>
         <div class="temn">
-            <a href="<?= url('/') ?>"><img class="logo" src="../img/icons/icons8-нравится-100 1.png" alt=""></a>
+            <a href="<?= url('/') ?>"><img class="logo" src="../img/logo.png" alt=""></a>
             <p>Все права защищены</p>
             <div class="icons"><a href="#"><img src="../img/icons/icons8-vk-96 1.png" alt=""></a> <a
                     href="#"><img src="../img/icons/icons8-новый-пост-96 1.png" alt=""></a><a
@@ -224,6 +238,41 @@ $features = explode("%" ,$array['features'])
     <script src=" {{ url('js/jquery-3.6.3.min.js') }} "></script>
     <script src=" {{ url('js/bootstrap.min.js') }} "></script>
     <script src=" {{ url('js/main.js') }} "></script>
+    <script type="text/javascript">
+        function setCursorPosition(pos, e) {
+          e.focus();
+          if (e.setSelectionRange) e.setSelectionRange(pos, pos);
+          else if (e.createTextRange) {
+            var range = e.createTextRange();
+            range.collapse(true);
+            range.moveEnd("character", pos);
+            range.moveStart("character", pos);
+            range.select()
+          }
+        }
+      
+        function mask(e) {
+          //console.log('mask',e);
+          var matrix = this.placeholder,// .defaultValue
+              i = 0,
+              def = matrix.replace(/\D/g, ""),
+              val = this.value.replace(/\D/g, "");
+          def.length >= val.length && (val = def);
+          matrix = matrix.replace(/[_\d]/g, function(a) {
+            return val.charAt(i++) || "_"
+          });
+          this.value = matrix;
+          i = matrix.lastIndexOf(val.substr(-1));
+          i < matrix.length && matrix != this.placeholder ? i++ : i = matrix.indexOf("_");
+          setCursorPosition(i, this)
+        }
+        window.addEventListener("DOMContentLoaded", function() {
+          var input = document.querySelector("#online_phone");
+          input.addEventListener("input", mask, false);
+          input.focus();
+          setCursorPosition(3, input);
+        });
+      </script>
     </footer>
 </body>
 </html>

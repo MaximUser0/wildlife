@@ -13,10 +13,19 @@ function showBlock() {
 
 $("#gmailHover").hover(
     function () {
-        $(this).text("BibaAndBoba@gmail.com").css("width", "20vw");
+        if(window.innerWidth < 450){
+            $(this).text("BibaAndBoba@gmail.com");
+            
+        } else {
+            $(this).text("BibaAndBoba@gmail.com").css("width", "20vw");
+        }
     },
     function () {
-        $(this).text("Почта").css("width", "15vw");
+        if(window.innerWidth < 450){
+            $(this).text("Почта");
+        } else {
+            $(this).text("Почта").css("width", "15vw");
+        }
     }
 );
 $("#numberHover").hover(
@@ -29,10 +38,18 @@ $("#numberHover").hover(
 );
 $("#adresHover").hover(
     function () {
-        $(this).text("г.Бибовск, ул.Бобы д.12").css("width", "20vw");
+        if(window.innerWidth < 450){
+            $(this).text("г.Бибовск, ул.Бобы д.12");
+        } else {
+            $(this).text("г.Бибовск, ул.Бобы д.12").css("width", "20vw");
+        }
     },
     function () {
-        $(this).text("Адрес").css("width", "15vw");
+        if(window.innerWidth < 450){
+            $(this).text("Адрес");
+        } else {
+            $(this).text("Адрес").css("width", "15vw");
+        }
     }
 );
 

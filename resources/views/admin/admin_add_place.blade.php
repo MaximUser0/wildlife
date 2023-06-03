@@ -50,6 +50,8 @@
             $(this).next().html(file.name);
         });
     </script>
+    <script src="../../js/auth/checkUser.js"></script>
+    <script src="../../js/auth/logout.js"></script>
 
 </body>
 

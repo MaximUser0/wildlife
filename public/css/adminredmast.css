@@ -12,12 +12,14 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Hanuman&display=swap');
 
 textarea:focus,
+select:focus,
 input:focus {
     outline: 0;
 }
 
 textarea,
 input,
+select,
 button,
 label,
 p,
@@ -134,7 +136,7 @@ h3 {
     margin: 0vw 0 0.2vw 0;
 }
 
-input {
+select, input {
     width: 17vw;
     font-size: 14px;
     margin: 0.5vw 0 1vw 0;

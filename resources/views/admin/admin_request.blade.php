@@ -47,7 +47,8 @@
     </div>
 
 
-
+    <script src="../../js/auth/checkUser.js"></script>
+    <script src="../../js/auth/logout.js"></script>
 </body>
 
 </html>

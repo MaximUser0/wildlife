@@ -34,7 +34,11 @@
             </div>
             <div class="obsh">
                 <h3>Место</h3>
-                <input type="text" name="id_place" required>
+                <select name="id_place" required>
+                    @foreach ($places as $place)
+                        <option value="<?=$place['id']?>"><?=$place['title']?></option>
+                    @endforeach
+                </select>
                 <h3>Особенности</h3>
                 <input type="text" name="f1" required>
                 <input type="text" name="f2" required>
@@ -151,6 +155,8 @@
             $(this).next().html(file.name);
         });
     </script>
+    <script src="../../js/auth/checkUser.js"></script>
+    <script src="../../js/auth/logout.js"></script>
 
 </body>
 

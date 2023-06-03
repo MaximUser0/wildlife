@@ -14,13 +14,14 @@
 </head>
 
 <body style="overflow-x: hidden;">
-  <form action="<?= url('/login') ?>" method="GET">
+  <form>
     <h2>Авторизация</h2>
     <h3>Логин</h3>
-    <input type="text" name="name">
+    <input id="name" type="text" name="name">
     <h3>Пароль</h3>
-    <input type="password" name="password">
-    <button type="submit">Войти</button>
+    <input id="password" type="password" name="password">
+    <button id="login">Войти</button>
   </form>
+  <script src="js/auth/login.js"></script>
 </body>
 </html>

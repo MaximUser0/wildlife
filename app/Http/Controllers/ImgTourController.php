@@ -70,7 +70,9 @@ class ImgTourController extends Controller
      */
     public function destroy($id)
     {
-        ImgTour::findOrFail($id)->delete();
+        $img  = ImgTour::findOrFail($id);
+        unlink($img->url);
+        $img->delete();
         echo response("", 204);
         return back()->withInput();
     }
